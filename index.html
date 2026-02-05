@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Heartfelt Handmade - Memorial Dolls & Gnomes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'warm-beige': '#F5F0EB',
+                        'soft-brown': '#8D7B68',
+                        'deep-chestnut': '#5D4037',
+                        'forest-green': '#4A5D23',
+                        'muted-gold': '#C5A059'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Lato"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .image-hover:hover {
+            transform: scale(1.02);
+            transition: transform 0.4s ease;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-warm-beige text-gray-800 font-sans antialiased selection:bg-muted-gold selection:text-white">
+
+    <nav class="fixed w-full z-50 bg-warm-beige/95 backdrop-blur-sm shadow-sm border-b border-stone-200 transition-all duration-300" id="navbar">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-deep-chestnut text-3xl">sentiment_satisfied</span>
+                    <h1 class="font-serif text-2xl font-bold text-deep-chestnut tracking-wide">Heartfelt Handmade</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors" id="btn-en" onclick="setLanguage('en')">EN</button>
+                    <span class="text-gray-400">|</span>
+                    <button class="text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors" id="btn-fr" onclick="setLanguage('fr')">FR</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative pt-20">
+        <div class="relative h-[600px] w-full overflow-hidden">
+            <img alt="Cozy workshop" class="w-full h-full object-cover brightness-75" src="https://images.unsplash.com/photo-1596232095817-6467384d72d6?q=80&w=2070&auto=format&fit=crop">
+            <div class="absolute inset-0 bg-gradient-to-t from-deep-chestnut/60 to-transparent"></div>
+            <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-4 fade-in">
+                <h2 class="font-serif text-5xl md:text-7xl text-white font-bold mb-6 shadow-sm" id="hero-title">Memories Made Tangible</h2>
+                <p class="text-xl md:text-2xl text-white/90 max-w-2xl font-light mb-10" id="hero-subtitle">Handcrafted memorial dolls and whimsical gnomes, made with love in Canada.</p>
+                <a class="bg-muted-gold hover:bg-yellow-600 text-white font-bold py-4 px-10 rounded-full shadow-lg transform transition hover:-translate-y-1 text-lg" href="#collection" id="hero-cta">
+                    View Collection
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-20 px-4 max-w-4xl mx-auto text-center">
+        <span class="material-symbols-outlined text-4xl text-soft-brown mb-4">handshake</span>
+        <h3 class="font-serif text-4xl text-deep-chestnut mb-6" id="intro-title">Handmade with Heart</h3>
+        <p class="text-lg text-gray-600 leading-relaxed" id="intro-text">
+            Welcome. I create special dolls that tell a story. Whether it's a "Memorial Doll" crafted from the clothing of a loved one to hold their memory close, or a charming "Gnome" to bring a touch of magic to your garden or home, every stitch is placed with care. I am a small, independent creator, and I cherish the personal connection with every customer.
+        </p>
+    </section>
+
+    <section class="py-20 bg-white" id="collection">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12 mb-16">
+                <div class="md:w-1/2 space-y-6">
+                    <div class="inline-block bg-warm-beige px-4 py-1 rounded-full text-deep-chestnut font-bold text-sm tracking-widest uppercase mb-2">Signature Item</div>
+                    <h3 class="font-serif text-4xl md:text-5xl text-deep-chestnut" id="memorial-title">Memorial Dolls</h3>
+                    <p class="text-lg text-gray-600 leading-relaxed" id="memorial-desc">
+                        Transform a cherished shirt, blanket, or piece of fabric into a comforting keepsake. These dolls are perfect for remembering a parent, grandparent, or anyone dear to your heart. They are soft, huggable, and designed to bring comfort.
+                    </p>
+                    <ul class="space-y-3 text-gray-600" id="memorial-features">
+                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-muted-gold">check_circle</span> <span>Made from your provided fabric</span></li>
+                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-muted-gold">check_circle</span> <span>High-quality safety eyes & filling</span></li>
+                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-muted-gold">check_circle</span> <span>A timeless heirloom for generations</span></li>
+                    </ul>
+                    <button class="mt-4 inline-flex items-center gap-2 text-deep-chestnut font-bold border-b-2 border-muted-gold hover:text-muted-gold transition-colors text-lg pb-1" id="memorial-btn" onclick="openFacebook()">
+                        Inquire on Facebook <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                </div>
+                <div class="md:w-1/2 grid grid-cols-2 gap-4">
+                    <img alt="Memorial Bear" class="rounded-lg shadow-md w-full h-64 object-cover image-hover" src="https://images.unsplash.com/photo-1559563458-527698bf5295?q=80&w=2070&auto=format&fit=crop">
+                    <img alt="Doll Detail" class="rounded-lg shadow-md w-full h-64 object-cover translate-y-8 image-hover" src="https://images.unsplash.com/photo-1606297378393-d2d415447ce7?q=80&w=1974&auto=format&fit=crop">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-stone-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row-reverse items-center gap-12">
+                <div class="md:w-1/2 space-y-6">
+                    <div class="inline-block bg-white px-4 py-1 rounded-full text-forest-green font-bold text-sm tracking-widest uppercase mb-2">Home Decor</div>
+                    <h3 class="font-serif text-4xl md:text-5xl text-forest-green" id="gnome-title">Whimsical Gnomes</h3>
+                    <p class="text-lg text-gray-600 leading-relaxed" id="gnome-desc">
+                        Add a little personality to your shelf, mantle, or entryway. My gnomes are inspired by folklore and nature. With their fuzzy beards and tall hats, they make wonderful gifts for friends or a treat for yourself.
+                    </p>
+                    <ul class="space-y-3 text-gray-600" id="gnome-features">
+                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-forest-green">check_circle</span> <span>Seasonal & Classic designs</span></li>
+                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-forest-green">check_circle</span> <span>Weighted bottoms for stability</span></li>
+                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-forest-green">check_circle</span> <span>Unique fabrics and textures</span></li>
+                    </ul>
+                    <button class="mt-4 inline-flex items-center gap-2 text-forest-green font-bold border-b-2 border-forest-green hover:text-green-700 transition-colors text-lg pb-1" id="gnome-btn" onclick="openFacebook()">
+                        Order on Facebook <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                </div>
+                <div class="md:w-1/2 grid grid-cols-2 gap-4">
+                    <img alt="Garden Gnome" class="rounded-lg shadow-md w-full h-64 object-cover image-hover" src="https://images.unsplash.com/photo-1598545806659-158850607c34?q=80&w=2070&auto=format&fit=crop">
+                    <img alt="Gnome Decor" class="rounded-lg shadow-md w-full h-64 object-cover translate-y-8 image-hover" src="https://images.unsplash.com/photo-1544778330-3b4df3d0a28f?q=80&w=2070&auto=format&fit=crop">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-warm-beige">
+        <div class="max-w-5xl mx-auto px-4">
+            <h3 class="font-serif text-3xl md:text-4xl text-center text-deep-chestnut mb-12" id="process-title">How to Purchase</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm text-center relative overflow-hidden">
+                    <div class="text-6xl text-warm-beige absolute -top-4 -right-4 font-serif font-bold opacity-50">1</div>
+                    <span class="material-symbols-outlined text-5xl text-muted-gold mb-4">collections</span>
+                    <h4 class="font-bold text-xl mb-3 text-gray-800" id="step1-title">Browse & Decide</h4>
+                    <p class="text-gray-600" id="step1-desc">Look at the photos here or on my Facebook page to decide if you want a custom Memorial Doll or a ready-made Gnome.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm text-center relative overflow-hidden transform md:-translate-y-4 border-b-4 border-muted-gold">
+                    <div class="text-6xl text-warm-beige absolute -top-4 -right-4 font-serif font-bold opacity-50">2</div>
+                    <span class="material-symbols-outlined text-5xl text-muted-gold mb-4">chat</span>
+                    <h4 class="font-bold text-xl mb-3 text-gray-800" id="step2-title">Message Me</h4>
+                    <p class="text-gray-600" id="step2-desc">Click the button below to send me a private message on Facebook (Messenger). I speak English and French.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm text-center relative overflow-hidden">
+                    <div class="text-6xl text-warm-beige absolute -top-4 -right-4 font-serif font-bold opacity-50">3</div>
+                    <span class="material-symbols-outlined text-5xl text-muted-gold mb-4">local_shipping</span>
+                    <h4 class="font-bold text-xl mb-3 text-gray-800" id="step3-title">Payment & Shipping</h4>
+                    <p class="text-gray-600" id="step3-desc">We will arrange payment securely. I ship anywhere in Canada. Memorial dolls require you to ship the fabric to me first.</p>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <div class="bg-white p-2 rounded-2xl shadow-lg inline-block">
+                    <img alt="Packaging" class="w-full max-w-2xl h-64 object-cover rounded-xl mb-6" src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=2070&auto=format&fit=crop">
+                </div>
+                <br>
+                <button class="bg-[#0084FF] hover:bg-[#006bcf] text-white font-bold py-4 px-12 rounded-full shadow-lg transition-all text-xl mt-8 flex items-center gap-3 mx-auto" id="final-cta" onclick="openFacebook()">
+                    <span class="material-symbols-outlined">chat_bubble</span>
+                    Contact Me on Messenger
+                </button>
+                <p class="mt-4 text-sm text-gray-500 italic" id="response-time">I typically reply within a few hours.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-deep-chestnut text-warm-beige py-10 border-t-4 border-muted-gold">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <h4 class="font-serif text-2xl font-bold">Heartfelt Handmade</h4>
+                <p class="text-sm opacity-80 mt-1">Ontario, Canada</p>
+            </div>
+            <div class="flex gap-6">
+                <a class="hover:text-white transition-colors" href="#">Facebook</a>
+                <a class="hover:text-white transition-colors" href="#">Instagram</a>
+            </div>
+            <p class="text-xs opacity-60" id="copyright">© 2024 Heartfelt Handmade. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Language Data
+        const translations = {
+            en: {
+                heroTitle: "Memories Made Tangible",
+                heroSubtitle: "Handcrafted memorial dolls and whimsical gnomes, made with love in Canada.",
+                heroCta: "View Collection",
+                introTitle: "Handmade with Heart",
+                introText: "Welcome. I create special dolls that tell a story. Whether it's a \"Memorial Doll\" crafted from the clothing of a loved one to hold their memory close, or a charming \"Gnome\" to bring a touch of magic to your garden or home, every stitch is placed with care. I am a small, independent creator, and I cherish the personal connection with every customer.",
+                memorialTitle: "Memorial Dolls",
+                memorialDesc: "Transform a cherished shirt, blanket, or piece of fabric into a comforting keepsake. These dolls are perfect for remembering a parent, grandparent, or anyone dear to your heart. They are soft, huggable, and designed to bring comfort.",
+                memorialFeatures: [
+                    "Made from your provided fabric",
+                    "High-quality safety eyes & filling",
+                    "A timeless heirloom for generations"
+                ],
+                memorialBtn: "Inquire on Facebook",
+                gnomeTitle: "Whimsical Gnomes",
+                gnomeDesc: "Add a little personality to your shelf, mantle, or entryway. My gnomes are inspired by folklore and nature. With their fuzzy beards and tall hats, they make wonderful gifts for friends or a treat for yourself.",
+                gnomeFeatures: [
+                    "Seasonal & Classic designs",
+                    "Weighted bottoms for stability",
+                    "Unique fabrics and textures"
+                ],
+                gnomeBtn: "Order on Facebook",
+                processTitle: "How to Purchase",
+                step1Title: "Browse & Decide",
+                step1Desc: "Look at the photos here or on my Facebook page to decide if you want a custom Memorial Doll or a ready-made Gnome.",
+                step2Title: "Message Me",
+                step2Desc: "Click the button below to send me a private message on Facebook (Messenger). I speak English and French.",
+                step3Title: "Payment & Shipping",
+                step3Desc: "We will arrange payment securely. I ship anywhere in Canada. Memorial dolls require you to ship the fabric to me first.",
+                finalCta: "Contact Me on Messenger",
+                responseTime: "I typically reply within a few hours.",
+                copyright: "© 2024 Heartfelt Handmade. All rights reserved."
+            },
+            fr: {
+                heroTitle: "Souvenirs Tangibles",
+                heroSubtitle: "Poupées mémorielles et gnomes fantaisistes faits main, fabriqués avec amour au Canada.",
+                heroCta: "Voir la Collection",
+                introTitle: "Fait Main avec Cœur",
+                introText: "Bienvenue. Je crée des poupées spéciales qui racontent une histoire. Qu'il s'agisse d'une « Poupée Mémorielle » confectionnée à partir des vêtements d'un être cher pour garder son souvenir proche, ou d'un charmant « Gnome » pour apporter une touche de magie à votre maison, chaque point est placé avec soin. Je suis une créatrice indépendante et je chéris le lien personnel avec chaque client.",
+                memorialTitle: "Poupées Mémorielles",
+                memorialDesc: "Transformez une chemise, une couverture ou un tissu chéri en un souvenir réconfortant. Ces poupées sont parfaites pour se souvenir d'un parent, d'un grand-parent ou de toute personne chère à votre cœur. Elles sont douces, câlines et conçues pour apporter du réconfort.",
+                memorialFeatures: [
+                    "Fabriqué à partir de votre tissu fourni",
+                    "Yeux de sécurité et rembourrage de haute qualité",
+                    "Un héritage intemporel pour les générations"
+                ],
+                memorialBtn: "Renseignez-vous sur Facebook",
+                gnomeTitle: "Gnomes Fantaisistes",
+                gnomeDesc: "Ajoutez un peu de personnalité à votre étagère, manteau de cheminée ou entrée. Mes gnomes sont inspirés du folklore et de la nature. Avec leurs barbes duveteuses et leurs hauts chapeaux, ils font de merveilleux cadeaux pour des amis ou pour vous-même.",
+                gnomeFeatures: [
+                    "Designs saisonniers et classiques",
+                    "Base lestée pour la stabilité",
+                    "Tissus et textures uniques"
+                ],
+                gnomeBtn: "Commander sur Facebook",
+                processTitle: "Comment Acheter",
+                step1Title: "Choisir",
+                step1Desc: "Regardez les photos ici ou sur ma page Facebook pour décider si vous voulez une Poupée Mémorielle personnalisée ou un Gnome.",
+                step2Title: "M'envoyer un message",
+                step2Desc: "Cliquez sur le bouton ci-dessous pour m'envoyer un message privé sur Facebook (Messenger). Je parle anglais et français.",
+                step3Title: "Paiement et Livraison",
+                step3Desc: "Nous organiserons le paiement en toute sécurité. J'expédie partout au Canada. Les poupées mémorielles nécessitent que vous m'envoyiez d'abord le tissu.",
+                finalCta: "Contactez-moi sur Messenger",
+                responseTime: "Je réponds généralement en quelques heures.",
+                copyright: "© 2024 Heartfelt Handmade. Tous droits réservés."
+            }
+        };
+
+        // State
+        let currentLang = 'en';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            const content = translations[lang];
+
+            // Update UI Styling for Buttons
+            document.getElementById('btn-en').className = lang === 'en' 
+                ? "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors" 
+                : "text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors";
+            
+            document.getElementById('btn-fr').className = lang === 'fr' 
+                ? "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors" 
+                : "text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors";
+
+            // Update Text Content
+            document.getElementById('hero-title').innerText = content.heroTitle;
+            document.getElementById('hero-subtitle').innerText = content.heroSubtitle;
+            document.getElementById('hero-cta').innerText = content.heroCta;
+            
+            document.getElementById('intro-title').innerText = content.introTitle;
+            document.getElementById('intro-text').innerText = content.introText;
+            
+            document.getElementById('memorial-title').innerText = content.memorialTitle;
+            document.getElementById('memorial-desc').innerText = content.memorialDesc;
+            
+            // Update Memorial List
+            const memList = document.getElementById('memorial-features');
+            memList.innerHTML = '';
+            content.memorialFeatures.forEach(feat => {
+                const li = document.createElement('li');
+                li.className = "flex items-center gap-3";
+                li.innerHTML = `<span class="material-symbols-outlined text-muted-gold">check_circle</span> <span>${feat}</span>`;
+                memList.appendChild(li);
+            });
+            document.getElementById('memorial-btn').innerHTML = `${content.memorialBtn} <span class="material-symbols-outlined">arrow_forward</span>`;
+
+            document.getElementById('gnome-title').innerText = content.gnomeTitle;
+            document.getElementById('gnome-desc').innerText = content.gnomeDesc;
+            
+            // Update Gnome List
+            const gnomeList = document.getElementById('gnome-features');
+            gnomeList.innerHTML = '';
+            content.gnomeFeatures.forEach(feat => {
+                const li = document.createElement('li');
+                li.className = "flex items-center gap-3";
+                li.innerHTML = `<span class="material-symbols-outlined text-forest-green">check_circle</span> <span>${feat}</span>`;
+                gnomeList.appendChild(li);
+            });
+            document.getElementById('gnome-btn').innerHTML = `${content.gnomeBtn} <span class="material-symbols-outlined">arrow_forward</span>`;
+
+            document.getElementById('process-title').innerText = content.processTitle;
+            document.getElementById('step1-title').innerText = content.step1Title;
+            document.getElementById('step1-desc').innerText = content.step1Desc;
+            document.getElementById('step2-title').innerText = content.step2Title;
+            document.getElementById('step2-desc').innerText = content.step2Desc;
+            document.getElementById('step3-title').innerText = content.step3Title;
+            document.getElementById('step3-desc').innerText = content.step3Desc;
+            
+            document.getElementById('final-cta').innerHTML = `<span class="material-symbols-outlined">chat_bubble</span> ${content.finalCta}`;
+            document.getElementById('response-time').innerText = content.responseTime;
+            document.getElementById('copyright').innerText = content.copyright;
+        }
+
+        function openFacebook() {
+            // 여기에 실제 페이스북 메시지 링크나 페이지 링크를 넣으세요.
+            window.open('https://www.facebook.com/', '_blank');
+        }
+
+        // Initialize scroll effect for nav
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+                nav.classList.remove('h-20');
+                nav.classList.add('h-16');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.remove('h-16');
+                nav.classList.add('h-20');
+            }
+        });
+    </script>
+</body>
+</html>
