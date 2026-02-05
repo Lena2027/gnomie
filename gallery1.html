@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Gallery - Happy Hands Craft</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'warm-beige': '#F5F0EB',
+                        'deep-chestnut': '#5D4037',
+                        'muted-gold': '#C5A059'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Lato"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-warm-beige text-gray-800 font-sans antialiased">
+
+    <nav class="w-full bg-warm-beige/95 backdrop-blur-sm shadow-sm border-b border-stone-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                    <span class="material-symbols-outlined text-deep-chestnut text-3xl">arrow_back</span>
+                    <span class="font-bold text-deep-chestnut">Back to Home</span>
+                </a>
+                <h1 class="font-serif text-2xl font-bold text-deep-chestnut">Our Gallery</h1>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-12 px-4 max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="font-serif text-4xl text-deep-chestnut mb-4">Happy Hands Craft Collection</h2>
+            <p class="text-lg text-gray-600">A showcase of memorial dolls and gnomes crafted with love.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <img src="https://images.unsplash.com/photo-1559563458-527698bf5295?q=80&w=2070&auto=format&fit=crop" alt="Bear Doll 1" class="w-full h-64 object-cover rounded">
+                <div class="p-4">
+                    <h3 class="font-serif text-xl font-bold text-deep-chestnut">Classic Memory Bear</h3>
+                    <p class="text-sm text-gray-500">Made from plaid shirts</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <img src="https://images.unsplash.com/photo-1550920364-d6215eb1742c?q=80&w=2070&auto=format&fit=crop" alt="Bear Doll 2" class="w-full h-64 object-cover rounded">
+                <div class="p-4">
+                    <h3 class="font-serif text-xl font-bold text-deep-chestnut">Vintage Floral Bear</h3>
+                    <p class="text-sm text-gray-500">Soft cotton texture</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <img src="https://images.unsplash.com/photo-1598545806659-158850607c34?q=80&w=2070&auto=format&fit=crop" alt="Gnome" class="w-full h-64 object-cover rounded">
+                <div class="p-4">
+                    <h3 class="font-serif text-xl font-bold text-deep-chestnut">Garden Gnome</h3>
+                    <p class="text-sm text-gray-500">Whimsical decor</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <img src="https://images.unsplash.com/photo-1606297378393-d2d415447ce7?q=80&w=1974&auto=format&fit=crop" alt="Bear Detail" class="w-full h-64 object-cover rounded">
+                <div class="p-4">
+                    <h3 class="font-serif text-xl font-bold text-deep-chestnut">Detail Work</h3>
+                    <p class="text-sm text-gray-500">Hand-stitched features</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <img src="https://images.unsplash.com/photo-1516640986064-58a44d061730?q=80&w=2070&auto=format&fit=crop" alt="Cozy Bear" class="w-full h-64 object-cover rounded">
+                <div class="p-4">
+                    <h3 class="font-serif text-xl font-bold text-deep-chestnut">Cozy Knit Bear</h3>
+                    <p class="text-sm text-gray-500">Winter collection</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <img src="https://images.unsplash.com/photo-1544778330-3b4df3d0a28f?q=80&w=2070&auto=format&fit=crop" alt="Gnome Collection" class="w-full h-64 object-cover rounded">
+                <div class="p-4">
+                    <h3 class="font-serif text-xl font-bold text-deep-chestnut">Holiday Gnomes</h3>
+                    <p class="text-sm text-gray-500">Festive set</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-16 text-center">
+            <p class="text-gray-600 mb-6">See something you like? Let's create something special together.</p>
+            <a href="https://www.facebook.com/" target="_blank" class="bg-deep-chestnut hover:bg-[#4a332a] text-warm-beige font-bold py-3 px-8 rounded-full shadow-lg transition-all inline-flex items-center gap-2">
+                <span class="material-symbols-outlined">chat_bubble</span>
+                Message on Facebook
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-deep-chestnut text-warm-beige py-8 border-t-4 border-muted-gold mt-12">
+        <div class="text-center">
+            <p class="text-sm opacity-60">© 2026 Happy Hands Craft.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
