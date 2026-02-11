@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>How to Order - Happy Hands Craft</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'warm-beige': '#F5F0EB',
+                        'deep-chestnut': '#5D4037',
+                        'muted-gold': '#C5A059',
+                        'forest-green': '#4A5D23'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Lato"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-warm-beige text-gray-800 font-sans antialiased">
+
+    <nav class="w-full bg-warm-beige/95 backdrop-blur-sm shadow-sm border-b border-stone-200 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                    <span class="material-symbols-outlined text-deep-chestnut text-3xl">arrow_back</span>
+                    <span class="font-bold text-deep-chestnut" id="nav-back">Back to Home</span>
+                </a>
+                
+                <div class="flex items-center gap-6">
+                    <h1 class="hidden md:block font-serif text-2xl font-bold text-deep-chestnut" id="nav-title">How to Order</h1>
+
+                    <div class="flex items-center space-x-2 border-l border-gray-300 pl-6">
+                        <button class="text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors" id="btn-en" onclick="setLanguage('en')">EN</button>
+                        <span class="text-gray-400">|</span>
+                        <button class="text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors" id="btn-fr" onclick="setLanguage('fr')">FR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-16 px-4 max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="font-serif text-4xl md:text-5xl text-deep-chestnut mb-6" id="page-headline">Start Your Custom Project</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto" id="page-subhead">
+                Ready to bring your vision to life? Follow these simple steps to order your custom Gnome or Memorial keepsake.
+            </p>
+        </div>
+
+        <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-stone-300 before:to-transparent">
+
+            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-muted-gold text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                    <span class="material-symbols-outlined font-bold">search</span>
+                </div>
+                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl shadow-sm border border-stone-100">
+                    <h3 class="font-serif text-2xl font-bold text-deep-chestnut mb-2" id="step1-title">1. Browse & Choose</h3>
+                    <p class="text-gray-600 leading-relaxed" id="step1-desc">
+                        Look at the photos here or on my Facebook page to decide on a custom Gnome or a Memorial keepsake.
+                    </p>
+                </div>
+            </div>
+
+            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-deep-chestnut text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                    <span class="material-symbols-outlined font-bold">mail</span>
+                </div>
+                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl shadow-sm border border-stone-100">
+                    <h3 class="font-serif text-2xl font-bold text-deep-chestnut mb-2" id="step2-title">2. Get in Touch</h3>
+                    <p class="text-gray-600 leading-relaxed" id="step2-desc">
+                        Send me a message through Facebook or <a href="mailto:happyhandsnb@gmail.com" class="text-muted-gold hover:underline font-bold">happyhandsnb@gmail.com</a> to discuss your theme or fabric.
+                    </p>
+                </div>
+            </div>
+
+            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-forest-green text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                    <span class="material-symbols-outlined font-bold">location_on</span>
+                </div>
+                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl shadow-sm border border-stone-100">
+                    <h3 class="font-serif text-2xl font-bold text-deep-chestnut mb-2" id="step3-title">3. Local Pick-up/Drop-off</h3>
+                    <p class="text-gray-600 leading-relaxed" id="step3-desc">
+                        For those in Dieppe and surrounding areas, we can arrange a convenient time for you to drop off your clothing or pick up your finished order.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-16 text-center">
+            <a href="https://www.facebook.com/" target="_blank" class="bg-deep-chestnut hover:bg-[#4a332a] text-warm-beige font-bold py-4 px-10 rounded-full shadow-lg transition-all inline-flex items-center gap-3 text-lg transform hover:-translate-y-1">
+                <span class="material-symbols-outlined">chat_bubble</span>
+                <span id="cta-btn">Message Me to Order</span>
+            </a>
+            <p class="mt-4 text-sm text-gray-500 italic" id="email-note">Or email me at happyhandsnb@gmail.com</p>
+        </div>
+
+    </section>
+
+    <footer class="bg-deep-chestnut text-warm-beige py-8 border-t-4 border-muted-gold mt-12">
+        <div class="text-center">
+            <h4 class="font-serif text-xl font-bold mb-2">Happy Hands Craft</h4>
+            <p class="text-sm opacity-80 mb-4">New Brunswick, Canada</p>
+            <p class="text-sm opacity-60" id="copyright">© 2026 Happy Hands Craft. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                navBack: "Back to Home",
+                navTitle: "How to Order",
+                pageHeadline: "Start Your Custom Project",
+                pageSubhead: "Ready to bring your vision to life? Follow these simple steps to order your custom Gnome or Memorial keepsake.",
+                step1Title: "1. Browse & Choose",
+                step1Desc: "Look at the photos here or on my Facebook page to decide on a custom Gnome or a Memorial keepsake.",
+                step2Title: "2. Get in Touch",
+                step2Desc: "Send me a message through Facebook or <a href='mailto:happyhandsnb@gmail.com' class='text-muted-gold hover:underline font-bold'>happyhandsnb@gmail.com</a> to discuss your theme or fabric.",
+                step3Title: "3. Local Pick-up/Drop-off",
+                step3Desc: "For those in Dieppe and surrounding areas, we can arrange a convenient time for you to drop off your clothing or pick up your finished order.",
+                ctaBtn: "Message Me to Order",
+                emailNote: "Or email me at happyhandsnb@gmail.com",
+                copyright: "© 2024 HappyHandsCraft. All rights reserved."
+            },
+            fr: {
+                navBack: "Retour à l'accueil",
+                navTitle: "Comment commander",
+                pageHeadline: "Comment commander",
+                pageSubhead: "Prêt à commencer votre projet personnalisé ? Suivez ces étapes simples pour donner vie à votre idée :",
+                step1Title: "1. Parcourez et décidez",
+                step1Desc: "Regardez les photos ici ou sur ma page Facebook pour choisir entre un gnome personnalisé ou un souvenir spéciale.",
+                step2Title: "2. Contactez-moi",
+                step2Desc: "Envoyez-moi un message via Facebook ou par courriel à <a href='mailto:happyhandsnb@gmail.com' class='text-muted-gold hover:underline font-bold'>happyhandsnb@gmail.com</a> pour discuter de votre thème ou de votre tissu.",
+                step3Title: "3. Cueillette et dépôt local",
+                step3Desc: "Pour ceux qui habitent à Dieppe et les environs, nous pouvons arranger un moment pratique pour que vous puissiez déposer vos vêtements ou ramasser votre commande terminée.",
+                ctaBtn: "M'envoyer un message",
+                emailNote: "Ou envoyez-moi un courriel à happyhandsnb@gmail.com",
+                copyright: "© 2024 HappyHandsCraft. Tous droits réservés."
+            }
+        };
+
+        function setLanguage(lang) {
+            const content = translations[lang];
+            
+            // Text Updates
+            document.getElementById('nav-back').innerText = content.navBack;
+            document.getElementById('nav-title').innerText = content.navTitle;
+            document.getElementById('page-headline').innerText = content.pageHeadline;
+            document.getElementById('page-subhead').innerText = content.pageSubhead;
+            
+            document.getElementById('step1-title').innerText = content.step1Title;
+            document.getElementById('step1-desc').innerText = content.step1Desc;
+            document.getElementById('step2-title').innerHTML = content.step2Title;
+            document.getElementById('step2-desc').innerHTML = content.step2Desc;
+            document.getElementById('step3-title').innerText = content.step3Title;
+            document.getElementById('step3-desc').innerText = content.step3Desc;
+            
+            document.getElementById('cta-btn').innerText = content.ctaBtn;
+            document.getElementById('email-note').innerText = content.emailNote;
+            document.getElementById('copyright').innerText = content.copyright;
+
+            // Button Styling
+            if (lang === 'en') {
+                document.getElementById('btn-en').className = "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors";
+                document.getElementById('btn-fr').className = "text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors";
+            } else {
+                document.getElementById('btn-en').className = "text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors";
+                document.getElementById('btn-fr').className = "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors";
+            }
+        }
+    </script>
+
+</body>
+</html>
