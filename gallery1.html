@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Gallery - Happy Hands Craft</title>
+    <title>Gallery - HappyHandsCraft</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
@@ -30,90 +30,200 @@
 </head>
 <body class="bg-warm-beige text-gray-800 font-sans antialiased">
 
-    <nav class="w-full bg-warm-beige/95 backdrop-blur-sm shadow-sm border-b border-stone-200">
+    <nav class="w-full bg-warm-beige/95 backdrop-blur-sm shadow-sm border-b border-stone-200 sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
                     <span class="material-symbols-outlined text-deep-chestnut text-3xl">arrow_back</span>
-                    <span class="font-bold text-deep-chestnut">Back to Home</span>
+                    <span class="font-bold text-deep-chestnut" id="nav-back">Back to Home</span>
                 </a>
-                <h1 class="font-serif text-2xl font-bold text-deep-chestnut">Our Gallery</h1>
+                
+                <div class="flex items-center gap-6">
+                    <h1 class="hidden md:block font-serif text-2xl font-bold text-deep-chestnut" id="nav-title">Our Gallery</h1>
+
+                    <div class="flex items-center space-x-2 border-l border-gray-300 pl-6">
+                        <button class="text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors" id="btn-en" onclick="setLanguage('en')">EN</button>
+                        <span class="text-gray-400">|</span>
+                        <button class="text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors" id="btn-fr" onclick="setLanguage('fr')">FR</button>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
 
-    <section class="py-12 px-4 max-w-6xl mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="font-serif text-4xl text-deep-chestnut mb-4">Happy Hands Craft Collection</h2>
-            <p class="text-lg text-gray-600">A showcase of memorial dolls and gnomes crafted with love.</p>
+    <section class="py-16 px-4 max-w-4xl mx-auto text-center">
+        <h2 class="font-serif text-4xl md:text-5xl text-deep-chestnut mb-6" id="main-title">Preserve a Memory, Hold a Legacy</h2>
+        
+        <div class="text-lg text-gray-600 leading-relaxed mb-10 max-w-3xl mx-auto space-y-4">
+            <p id="main-desc-1">
+                Transform a cherished shirt, blanket, or favorite fabric into a comforting, handcrafted keepsake. These bears and pillows are a beautiful way to keep the spirit of a parent, grandparent, or dear friend close to your heart.
+            </p>
+            <p id="main-desc-2">
+                Crafted with love and respect, each piece is designed to be soft, huggable, and a lasting source of comfort.
+            </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid md:grid-cols-3 gap-8 mb-16 border-t border-b border-gray-300 py-8">
+            <div>
+                <span class="material-symbols-outlined text-3xl text-muted-gold mb-2">cut</span>
+                <h3 class="font-bold text-deep-chestnut text-lg" id="feat1-title">Custom Crafted</h3>
+                <p class="text-sm text-gray-600" id="feat1-desc">Made uniquely from your provided fabric.</p>
+            </div>
+            <div>
+                <span class="material-symbols-outlined text-3xl text-muted-gold mb-2">verified_user</span>
+                <h3 class="font-bold text-deep-chestnut text-lg" id="feat2-title">Quality & Safety</h3>
+                <p class="text-sm text-gray-600" id="feat2-desc">Finished with attention to details and premium, soft filling.</p>
+            </div>
+            <div>
+                <span class="material-symbols-outlined text-3xl text-muted-gold mb-2">hourglass_top</span>
+                <h3 class="font-bold text-deep-chestnut text-lg" id="feat3-title">A Lasting Heirloom</h3>
+                <p class="text-sm text-gray-600" id="feat3-desc">A timeless connection to be cherished for generations.</p>
+            </div>
+        </div>
+
+        <div class="bg-white p-8 rounded-xl shadow-sm border border-stone-200">
+            <h3 class="font-serif text-2xl text-deep-chestnut mb-4" id="pers-title">Personalize Your Keepsake</h3>
+            <p class="text-gray-600 mb-6" id="pers-desc">Make your memory bear or pillow even more special by adding custom details. I can attach:</p>
             
+            <ul class="grid md:grid-cols-3 gap-4 text-left md:text-center">
+                <li class="flex items-center md:justify-center gap-2 text-gray-700">
+                    <span class="material-symbols-outlined text-deep-chestnut">edit_calendar</span> <span id="pers-item1">Names & Dates</span>
+                </li>
+                <li class="flex items-center md:justify-center gap-2 text-gray-700">
+                    <span class="material-symbols-outlined text-deep-chestnut">straighten</span> <span id="pers-item2">Birth Stats (Weight, length, time)</span>
+                </li>
+                <li class="flex items-center md:justify-center gap-2 text-gray-700">
+                    <span class="material-symbols-outlined text-deep-chestnut">history_edu</span> <span id="pers-item3">Special Poem or meaningful message</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="pb-20 px-4 max-w-6xl mx-auto">
+        <h3 class="font-serif text-3xl text-deep-chestnut mb-8 text-center border-b border-muted-gold pb-4 inline-block w-full" id="recent-title">Recent Creations</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
                 <img src="https://images.unsplash.com/photo-1559563458-527698bf5295?q=80&w=2070&auto=format&fit=crop" alt="Bear Doll 1" class="w-full h-64 object-cover rounded">
-                <div class="p-4">
-                    <h3 class="font-serif text-xl font-bold text-deep-chestnut">Classic Memory Bear</h3>
-                    <p class="text-sm text-gray-500">Made from plaid shirts</p>
-                </div>
             </div>
-
             <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
                 <img src="https://images.unsplash.com/photo-1550920364-d6215eb1742c?q=80&w=2070&auto=format&fit=crop" alt="Bear Doll 2" class="w-full h-64 object-cover rounded">
-                <div class="p-4">
-                    <h3 class="font-serif text-xl font-bold text-deep-chestnut">Vintage Floral Bear</h3>
-                    <p class="text-sm text-gray-500">Soft cotton texture</p>
-                </div>
             </div>
-
             <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
                 <img src="https://images.unsplash.com/photo-1598545806659-158850607c34?q=80&w=2070&auto=format&fit=crop" alt="Gnome" class="w-full h-64 object-cover rounded">
-                <div class="p-4">
-                    <h3 class="font-serif text-xl font-bold text-deep-chestnut">Garden Gnome</h3>
-                    <p class="text-sm text-gray-500">Whimsical decor</p>
-                </div>
             </div>
-
             <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
                 <img src="https://images.unsplash.com/photo-1606297378393-d2d415447ce7?q=80&w=1974&auto=format&fit=crop" alt="Bear Detail" class="w-full h-64 object-cover rounded">
-                <div class="p-4">
-                    <h3 class="font-serif text-xl font-bold text-deep-chestnut">Detail Work</h3>
-                    <p class="text-sm text-gray-500">Hand-stitched features</p>
-                </div>
             </div>
-
             <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
                 <img src="https://images.unsplash.com/photo-1516640986064-58a44d061730?q=80&w=2070&auto=format&fit=crop" alt="Cozy Bear" class="w-full h-64 object-cover rounded">
-                <div class="p-4">
-                    <h3 class="font-serif text-xl font-bold text-deep-chestnut">Cozy Knit Bear</h3>
-                    <p class="text-sm text-gray-500">Winter collection</p>
-                </div>
             </div>
-
             <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
                 <img src="https://images.unsplash.com/photo-1544778330-3b4df3d0a28f?q=80&w=2070&auto=format&fit=crop" alt="Gnome Collection" class="w-full h-64 object-cover rounded">
-                <div class="p-4">
-                    <h3 class="font-serif text-xl font-bold text-deep-chestnut">Holiday Gnomes</h3>
-                    <p class="text-sm text-gray-500">Festive set</p>
-                </div>
             </div>
-
         </div>
 
         <div class="mt-16 text-center">
-            <p class="text-gray-600 mb-6">See something you like? Let's create something special together.</p>
+            <p class="text-gray-600 mb-6" id="cta-text">See something you like? Let's create something special together.</p>
             <a href="https://www.facebook.com/" target="_blank" class="bg-deep-chestnut hover:bg-[#4a332a] text-warm-beige font-bold py-3 px-8 rounded-full shadow-lg transition-all inline-flex items-center gap-2">
                 <span class="material-symbols-outlined">chat_bubble</span>
-                Message on Facebook
+                <span id="cta-btn">Message on Facebook</span>
             </a>
         </div>
     </section>
 
     <footer class="bg-deep-chestnut text-warm-beige py-8 border-t-4 border-muted-gold mt-12">
         <div class="text-center">
-            <p class="text-sm opacity-60">© 2026 Happy Hands Craft.</p>
+            <p class="text-sm opacity-60" id="copyright">© 2026 HappyHandsCraft. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        const translations = {
+            en: {
+                navBack: "Back to Home",
+                navTitle: "Our Gallery",
+                mainTitle: "Preserve a Memory, Hold a Legacy",
+                mainDesc1: "Transform a cherished shirt, blanket, or favorite fabric into a comforting, handcrafted keepsake. These bears and pillows are a beautiful way to keep the spirit of a parent, grandparent, or dear friend close to your heart.",
+                mainDesc2: "Crafted with love and respect, each piece is designed to be soft, huggable, and a lasting source of comfort.",
+                feat1Title: "Custom Crafted",
+                feat1Desc: "Made uniquely from your provided fabric.",
+                feat2Title: "Quality & Safety",
+                feat2Desc: "Finished with attention to details and premium, soft filling.",
+                feat3Title: "A Lasting Heirloom",
+                feat3Desc: "A timeless connection to be cherished for generations.",
+                persTitle: "Personalize Your Keepsake",
+                persDesc: "Make your memory bear or pillow even more special by adding custom details. I can attach:",
+                persItem1: "Names & Dates",
+                persItem2: "Birth Stats (Weight, length, time)",
+                persItem3: "Special Poem or meaningful message",
+                recentTitle: "Recent Creations",
+                ctaText: "See something you like? Let's create something special together.",
+                ctaBtn: "Message on Facebook",
+                copyright: "© 2024 HappyHandsCraft. All rights reserved."
+            },
+            fr: {
+                navBack: "Retour à l'accueil",
+                navTitle: "Notre Galerie",
+                mainTitle: "Préserver un souvenir, garder un héritage",
+                mainDesc1: "Transformez une chemise, une couverture ou un tissu préféré en un souvenir réconfortant fait à la main. Ces oursons et ces oreillers sont une belle façon de garder l'esprit d'un parent, d'un grand-parent ou d'un ami cher tout près de votre cœur.",
+                mainDesc2: "Fabriquée avec amour et respect, chaque pièce est conçue pour être douce, cajolable et une source de réconfort durable.",
+                feat1Title: "Création personnalisée",
+                feat1Desc: "Fabriqué uniquement à partir du tissu que vous fournissez.",
+                feat2Title: "Qualité et sécurité",
+                feat2Desc: "Finition avec une attention aux détails et un rembourrage de première qualité.",
+                feat3Title: "Un héritage durable",
+                feat3Desc: "Un lien intemporel à chérir pour des générations.",
+                persTitle: "Personnalisez votre souvenir",
+                persDesc: "Rendez votre ourson ou votre oreiller souvenir encore plus spécial en ajoutant des détails personnalisés. Je peux ajouter :",
+                persItem1: "Noms et dates",
+                persItem2: "Statistiques de naissance (poids, grandeur, heure)",
+                persItem3: "Un petit poème ou un message significatif",
+                recentTitle: "Créations Récentes",
+                ctaText: "Vous voyez quelque chose qui vous plaît ? Créons quelque chose de spécial ensemble.",
+                ctaBtn: "Message sur Facebook",
+                copyright: "© 2026 HappyHandsCraft. Tous droits réservés."
+            }
+        };
+
+        function setLanguage(lang) {
+            const content = translations[lang];
+            
+            // Text Updates
+            document.getElementById('nav-back').innerText = content.navBack;
+            document.getElementById('nav-title').innerText = content.navTitle;
+            document.getElementById('main-title').innerText = content.mainTitle;
+            document.getElementById('main-desc-1').innerText = content.mainDesc1;
+            document.getElementById('main-desc-2').innerText = content.mainDesc2;
+            
+            document.getElementById('feat1-title').innerText = content.feat1Title;
+            document.getElementById('feat1-desc').innerText = content.feat1Desc;
+            document.getElementById('feat2-title').innerText = content.feat2Title;
+            document.getElementById('feat2-desc').innerText = content.feat2Desc;
+            document.getElementById('feat3-title').innerText = content.feat3Title;
+            document.getElementById('feat3-desc').innerText = content.feat3Desc;
+            
+            document.getElementById('pers-title').innerText = content.persTitle;
+            document.getElementById('pers-desc').innerText = content.persDesc;
+            document.getElementById('pers-item1').innerText = content.persItem1;
+            document.getElementById('pers-item2').innerText = content.persItem2;
+            document.getElementById('pers-item3').innerText = content.persItem3;
+            
+            document.getElementById('recent-title').innerText = content.recentTitle;
+            document.getElementById('cta-text').innerText = content.ctaText;
+            document.getElementById('cta-btn').innerText = content.ctaBtn;
+            document.getElementById('copyright').innerText = content.copyright;
+
+            // Button Styling
+            if (lang === 'en') {
+                document.getElementById('btn-en').className = "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors";
+                document.getElementById('btn-fr').className = "text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors";
+            } else {
+                document.getElementById('btn-en').className = "text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors";
+                document.getElementById('btn-fr').className = "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors";
+            }
+        }
+    </script>
 
 </body>
 </html>
