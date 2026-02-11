@@ -11,35 +11,89 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
     
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'warm-beige': '#F5F0EB',
-                        'soft-brown': '#8D7B68',
-                        'deep-chestnut': '#5D4037',
-                        'forest-green': '#4A5D23',
-                        'muted-gold': '#C5A059'
-                    },
-                    fontFamily: {
-                        serif: ['"Cormorant Garamond"', 'serif'],
-                        sans: ['"Lato"', 'sans-serif'],
-                    }
-                }
-            }
-        }
-        // 모바일 메뉴 열고 닫는 기능
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const icon = document.getElementById('menu-icon');
+       function setLanguage(lang) {
+            currentLang = lang;
+            const content = translations[lang];
+
+            // 1. PC용 버튼 스타일 업데이트
+            const btnEn = document.getElementById('btn-en');
+            const btnFr = document.getElementById('btn-fr');
             
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden'); // 메뉴 보이기
-                icon.innerText = 'close';        // 아이콘을 X로 변경
-            } else {
-                menu.classList.add('hidden');    // 메뉴 숨기기
-                icon.innerText = 'menu';         // 아이콘을 햄버거로 변경
+            if (btnEn && btnFr) {
+                btnEn.className = lang === 'en' 
+                    ? "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors" 
+                    : "text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors";
+                
+                btnFr.className = lang === 'fr' 
+                    ? "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors" 
+                    : "text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors";
             }
+
+            // 2. 모바일 상단 버튼 스타일 업데이트 (추가됨)
+            const mobHeaderEn = document.getElementById('mob-header-en');
+            const mobHeaderFr = document.getElementById('mob-header-fr');
+
+            if (mobHeaderEn && mobHeaderFr) {
+                mobHeaderEn.className = lang === 'en'
+                    ? "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut"
+                    : "text-sm font-normal text-gray-500";
+                
+                mobHeaderFr.className = lang === 'fr'
+                    ? "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut"
+                    : "text-sm font-normal text-gray-500";
+            }
+
+            // 3. 텍스트 내용 변경 (기존과 동일)
+            document.getElementById('hero-title').innerText = content.heroTitle;
+            document.getElementById('hero-subtitle').innerText = content.heroSubtitle;
+            document.getElementById('hero-cta').innerText = content.heroCta;
+            
+            document.getElementById('intro-title').innerText = content.introTitle;
+            document.getElementById('intro-text').innerText = content.introText;
+            
+            document.getElementById('memorial-title').innerText = content.memorialTitle;
+            document.getElementById('memorial-desc').innerText = content.memorialDesc;
+            
+            const memList = document.getElementById('memorial-features');
+            if(memList) {
+                memList.innerHTML = '';
+                content.memorialFeatures.forEach(feat => {
+                    const li = document.createElement('li');
+                    li.className = "flex items-center gap-3";
+                    li.innerHTML = `<span class="material-symbols-outlined text-muted-gold">check_circle</span> <span>${feat}</span>`;
+                    memList.appendChild(li);
+                });
+            }
+            const memBtn = document.getElementById('memorial-btn');
+            if(memBtn) memBtn.innerHTML = `${content.memorialBtn} <span class="material-symbols-outlined">arrow_forward</span>`;
+
+            document.getElementById('gnome-title').innerText = content.gnomeTitle;
+            document.getElementById('gnome-desc').innerText = content.gnomeDesc;
+            
+            const gnomeList = document.getElementById('gnome-features');
+            if(gnomeList) {
+                gnomeList.innerHTML = '';
+                content.gnomeFeatures.forEach(feat => {
+                    const li = document.createElement('li');
+                    li.className = "flex items-center gap-3";
+                    li.innerHTML = `<span class="material-symbols-outlined text-forest-green">check_circle</span> <span>${feat}</span>`;
+                    gnomeList.appendChild(li);
+                });
+            }
+            const gnomeBtn = document.getElementById('gnome-btn');
+            if(gnomeBtn) gnomeBtn.innerHTML = `${content.gnomeBtn} <span class="material-symbols-outlined">arrow_forward</span>`;
+
+            document.getElementById('process-title').innerText = content.processTitle;
+            document.getElementById('step1-title').innerText = content.step1Title;
+            document.getElementById('step1-desc').innerText = content.step1Desc;
+            document.getElementById('step2-title').innerText = content.step2Title;
+            document.getElementById('step2-desc').innerText = content.step2Desc;
+            document.getElementById('step3-title').innerText = content.step3Title;
+            document.getElementById('step3-desc').innerText = content.step3Desc;
+            
+            document.getElementById('final-cta').innerHTML = `<span class="material-symbols-outlined">chat_bubble</span> ${content.finalCta}`;
+            document.getElementById('response-time').innerText = content.responseTime;
+            document.getElementById('copyright').innerText = content.copyright;
         }
     </script>
     <style>
@@ -61,7 +115,7 @@
 </head>
 <body class="bg-warm-beige text-gray-800 font-sans antialiased selection:bg-muted-gold selection:text-white">
 
-   <nav class="fixed w-full z-50 bg-warm-beige/95 backdrop-blur-sm shadow-sm border-b border-stone-200 transition-all duration-300" id="navbar">
+  <nav class="fixed w-full z-50 bg-warm-beige/95 backdrop-blur-sm shadow-sm border-b border-stone-200 transition-all duration-300" id="navbar">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20 transition-all duration-300" id="nav-container">
                 
@@ -73,7 +127,7 @@
                 <div class="hidden md:flex items-center space-x-6">
                     <a href="about.html" class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">About</a>
                     <a href="gallery.html" class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">Gnome</a>
-                    <a href="gallery1.html" class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">Memory Bear</a>
+                    <a href="gallery1.html" class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">Memorial Dolls</a>
                     <a href="order.html" class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">Order</a>
                     
                     <div class="flex items-center space-x-2 border-l border-gray-300 pl-6">
@@ -83,26 +137,27 @@
                     </div>
                 </div>
 
-                <div class="md:hidden flex items-center">
-                    <button onclick="toggleMobileMenu()" class="text-deep-chestnut p-2 focus:outline-none">
+                <div class="md:hidden flex items-center gap-4">
+                    <div class="flex items-center space-x-2">
+                        <button class="text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut" id="mob-header-en" onclick="setLanguage('en')">EN</button>
+                        <span class="text-gray-300">|</span>
+                        <button class="text-sm font-normal text-gray-500" id="mob-header-fr" onclick="setLanguage('fr')">FR</button>
+                    </div>
+
+                    <button onclick="toggleMobileMenu()" class="text-deep-chestnut p-1 focus:outline-none">
                         <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
                     </button>
                 </div>
+
             </div>
         </div>
 
         <div class="hidden md:hidden bg-warm-beige border-b border-stone-200 shadow-lg absolute w-full left-0 top-full" id="mobile-menu">
             <div class="px-4 py-4 space-y-4 flex flex-col text-center">
                 <a href="about.html" class="block text-gray-700 hover:text-deep-chestnut font-medium py-2">About</a>
-                <a href="gallery.html" class="block text-gray-700 hover:text-deep-chestnut font-medium py-2">Gnome</a>
-                <a href="gallery1.html" class="block text-gray-700 hover:text-deep-chestnut font-medium py-2">Memory Bear</a>
+                <a href="gallery.html" class="block text-gray-700 hover:text-deep-chestnut font-medium py-2">Gnome Gallery</a>
+                <a href="gallery1.html" class="block text-gray-700 hover:text-deep-chestnut font-medium py-2">Memorial Dolls</a>
                 <a href="order.html" class="block text-gray-700 hover:text-deep-chestnut font-medium py-2">Order</a>
-                
-                <div class="flex justify-center items-center space-x-4 pt-4 border-t border-gray-200">
-                    <button class="text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut" onclick="setLanguage('en')">English</button>
-                    <span class="text-gray-300">|</span>
-                    <button class="text-sm font-normal text-gray-500" onclick="setLanguage('fr')">Français</button>
-                </div>
             </div>
         </div>
     </nav>
