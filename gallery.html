@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Gallery - Happy Hands Craft</title>
+    <title>Gnome Gallery - HappyHandsCraft</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
@@ -17,6 +17,7 @@
                     colors: {
                         'warm-beige': '#F5F0EB',
                         'deep-chestnut': '#5D4037',
+                        'forest-green': '#4A5D23',
                         'muted-gold': '#C5A059'
                     },
                     fontFamily: {
@@ -30,90 +31,206 @@
 </head>
 <body class="bg-warm-beige text-gray-800 font-sans antialiased">
 
-    <nav class="w-full bg-warm-beige/95 backdrop-blur-sm shadow-sm border-b border-stone-200">
+    <nav class="w-full bg-warm-beige/95 backdrop-blur-sm shadow-sm border-b border-stone-200 sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
                     <span class="material-symbols-outlined text-deep-chestnut text-3xl">arrow_back</span>
-                    <span class="font-bold text-deep-chestnut">Back to Home</span>
+                    <span class="font-bold text-deep-chestnut" id="nav-back">Back to Home</span>
                 </a>
-                <h1 class="font-serif text-2xl font-bold text-deep-chestnut">Our Gallery</h1>
+                
+                <div class="flex items-center gap-6">
+                    <h1 class="hidden md:block font-serif text-2xl font-bold text-deep-chestnut" id="nav-title">Gnome Gallery</h1>
+
+                    <div class="flex items-center space-x-2 border-l border-gray-300 pl-6">
+                        <button class="text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors" id="btn-en" onclick="setLanguage('en')">EN</button>
+                        <span class="text-gray-400">|</span>
+                        <button class="text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors" id="btn-fr" onclick="setLanguage('fr')">FR</button>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
 
-    <section class="py-12 px-4 max-w-6xl mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="font-serif text-4xl text-deep-chestnut mb-4">Happy Hands Craft Collection</h2>
-            <p class="text-lg text-gray-600">A showcase of memorial dolls and gnomes crafted with love.</p>
+    <section class="py-16 px-4 max-w-4xl mx-auto text-center">
+        <h2 class="font-serif text-4xl md:text-5xl text-forest-green mb-6" id="main-title">One-of-a-Kind Gnomes, Made for You</h2>
+        
+        <div class="text-lg text-gray-600 leading-relaxed mb-12 max-w-3xl mx-auto">
+            <p id="main-desc">
+                Bring a little luck and a lot of personality to your home with my Handcrafted Sports & Seasonal Gnomes.
+                I create these unique companions to celebrate the teams you love and the seasons you enjoy.
+            </p>
         </div>
 
+        <div class="grid md:grid-cols-2 gap-8 mb-12 text-left bg-white p-8 rounded-xl shadow-sm border border-stone-200">
+            <div class="flex gap-4">
+                <span class="material-symbols-outlined text-3xl text-forest-green shrink-0">sports_soccer</span>
+                <div>
+                    <h3 class="font-bold text-deep-chestnut text-lg" id="item1-title">Custom Sports Gnomes</h3>
+                    <p class="text-sm text-gray-600" id="item1-desc">Personalized for your favorite pro or local teams.</p>
+                </div>
+            </div>
+            <div class="flex gap-4">
+                <span class="material-symbols-outlined text-3xl text-forest-green shrink-0">ac_unit</span>
+                <div>
+                    <h3 class="font-bold text-deep-chestnut text-lg" id="item2-title">Seasonal Favorites</h3>
+                    <p class="text-sm text-gray-600" id="item2-desc">Holiday-themed designs to brighten your home.</p>
+                </div>
+            </div>
+            <div class="flex gap-4">
+                <span class="material-symbols-outlined text-3xl text-forest-green shrink-0">medical_services</span>
+                <div>
+                    <h3 class="font-bold text-deep-chestnut text-lg" id="item3-title">Community Heroes</h3>
+                    <p class="text-sm text-gray-600" id="item3-desc">Show appreciation with Nurse, Doctor, or Teacher gnomes.</p>
+                </div>
+            </div>
+            <div class="flex gap-4">
+                <span class="material-symbols-outlined text-3xl text-forest-green shrink-0">auto_awesome</span>
+                <div>
+                    <h3 class="font-bold text-deep-chestnut text-lg" id="item4-title">Whimsical Characters</h3>
+                    <p class="text-sm text-gray-600" id="item4-desc">Bring fun to your decor with Vikings, Wizards, or Garden gnomes.</p>
+                </div>
+            </div>
+            <div class="flex gap-4 md:col-span-2">
+                <span class="material-symbols-outlined text-3xl text-forest-green shrink-0">palette</span>
+                <div>
+                    <h3 class="font-bold text-deep-chestnut text-lg" id="item5-title">Hobbies & Interests</h3>
+                    <p class="text-sm text-gray-600" id="item5-desc">Personalized designs for chefs, fishermen, knitters, and more.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-forest-green/10 p-6 rounded-lg inline-block">
+            <h3 class="font-serif text-xl font-bold text-forest-green mb-2" id="custom-title">Looking for a specific theme?</h3>
+            <p class="text-gray-700" id="custom-desc">I can design a custom gnome to match any profession or passion.</p>
+        </div>
+    </section>
+
+    <section class="pb-20 px-4 max-w-6xl mx-auto">
+        <h3 class="font-serif text-3xl text-deep-chestnut mb-8 text-center border-b border-muted-gold pb-4 inline-block w-full" id="recent-title">Recent Creations</h3>
+        
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
             <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                <img src="https://images.unsplash.com/photo-1559563458-527698bf5295?q=80&w=2070&auto=format&fit=crop" alt="Bear Doll 1" class="w-full h-64 object-cover rounded">
-                <div class="p-4">
-                    <h3 class="font-serif text-xl font-bold text-deep-chestnut">Classic Memory Bear</h3>
-                    <p class="text-sm text-gray-500">Made from plaid shirts</p>
-                </div>
+                <img src="https://images.unsplash.com/photo-1598545806659-158850607c34?q=80&w=2070&auto=format&fit=crop" alt="Gnome 1" class="w-full h-64 object-cover rounded">
             </div>
-
             <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                <img src="https://images.unsplash.com/photo-1550920364-d6215eb1742c?q=80&w=2070&auto=format&fit=crop" alt="Bear Doll 2" class="w-full h-64 object-cover rounded">
-                <div class="p-4">
-                    <h3 class="font-serif text-xl font-bold text-deep-chestnut">Vintage Floral Bear</h3>
-                    <p class="text-sm text-gray-500">Soft cotton texture</p>
-                </div>
+                <img src="https://images.unsplash.com/photo-1544778330-3b4df3d0a28f?q=80&w=2070&auto=format&fit=crop" alt="Gnome 2" class="w-full h-64 object-cover rounded">
             </div>
-
             <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                <img src="https://images.unsplash.com/photo-1598545806659-158850607c34?q=80&w=2070&auto=format&fit=crop" alt="Gnome" class="w-full h-64 object-cover rounded">
-                <div class="p-4">
-                    <h3 class="font-serif text-xl font-bold text-deep-chestnut">Garden Gnome</h3>
-                    <p class="text-sm text-gray-500">Whimsical decor</p>
-                </div>
+                <img src="https://images.unsplash.com/photo-1512413394635-5ed561454393?q=80&w=2070&auto=format&fit=crop" alt="Gnome 3" class="w-full h-64 object-cover rounded">
             </div>
-
             <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                <img src="https://images.unsplash.com/photo-1606297378393-d2d415447ce7?q=80&w=1974&auto=format&fit=crop" alt="Bear Detail" class="w-full h-64 object-cover rounded">
-                <div class="p-4">
-                    <h3 class="font-serif text-xl font-bold text-deep-chestnut">Detail Work</h3>
-                    <p class="text-sm text-gray-500">Hand-stitched features</p>
-                </div>
+                <img src="https://images.unsplash.com/photo-1607344645866-009c320c5a39?q=80&w=2070&auto=format&fit=crop" alt="Gnome 4" class="w-full h-64 object-cover rounded">
             </div>
-
             <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                <img src="https://images.unsplash.com/photo-1516640986064-58a44d061730?q=80&w=2070&auto=format&fit=crop" alt="Cozy Bear" class="w-full h-64 object-cover rounded">
-                <div class="p-4">
-                    <h3 class="font-serif text-xl font-bold text-deep-chestnut">Cozy Knit Bear</h3>
-                    <p class="text-sm text-gray-500">Winter collection</p>
-                </div>
+                <img src="https://images.unsplash.com/photo-1576777647209-e8733d7b851d?q=80&w=1974&auto=format&fit=crop" alt="Gnome 5" class="w-full h-64 object-cover rounded">
             </div>
-
             <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                <img src="https://images.unsplash.com/photo-1544778330-3b4df3d0a28f?q=80&w=2070&auto=format&fit=crop" alt="Gnome Collection" class="w-full h-64 object-cover rounded">
-                <div class="p-4">
-                    <h3 class="font-serif text-xl font-bold text-deep-chestnut">Holiday Gnomes</h3>
-                    <p class="text-sm text-gray-500">Festive set</p>
-                </div>
+                <img src="https://images.unsplash.com/photo-1545048702-79362596cdc9?q=80&w=2070&auto=format&fit=crop" alt="Gnome 6" class="w-full h-64 object-cover rounded">
             </div>
-
         </div>
 
         <div class="mt-16 text-center">
-            <p class="text-gray-600 mb-6">See something you like? Let's create something special together.</p>
+            <p class="text-gray-600 mb-6" id="cta-text">See something you like? Let's create something special together.</p>
             <a href="https://www.facebook.com/" target="_blank" class="bg-deep-chestnut hover:bg-[#4a332a] text-warm-beige font-bold py-3 px-8 rounded-full shadow-lg transition-all inline-flex items-center gap-2">
                 <span class="material-symbols-outlined">chat_bubble</span>
-                Message on Facebook
+                <span id="cta-btn">Message on Facebook</span>
             </a>
         </div>
     </section>
 
     <footer class="bg-deep-chestnut text-warm-beige py-8 border-t-4 border-muted-gold mt-12">
         <div class="text-center">
-            <p class="text-sm opacity-60">© 2026 Happy Hands Craft.</p>
+            <p class="text-sm opacity-60" id="copyright">© 2024 HappyHandsCraft. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        const translations = {
+            en: {
+                navBack: "Back to Home",
+                navTitle: "Gnome Gallery",
+                mainTitle: "One-of-a-Kind Gnomes, Made for You",
+                mainDesc: "Bring a little luck and a lot of personality to your home with my Handcrafted Sports & Seasonal Gnomes. I create these unique companions to celebrate the teams you love and the seasons you enjoy.",
+                item1Title: "Custom Sports Gnomes",
+                item1Desc: "Personalized for your favorite pro or local teams.",
+                item2Title: "Seasonal Favorites",
+                item2Desc: "Holiday-themed designs to brighten your home.",
+                item3Title: "Community Heroes",
+                item3Desc: "Show appreciation with Nurse, Doctor, or Teacher gnomes.",
+                item4Title: "Whimsical Characters",
+                item4Desc: "Bring fun to your decor with Vikings, Wizards, or Garden gnomes.",
+                item5Title: "Hobbies & Interests",
+                item5Desc: "Personalized designs for chefs, fishermen, knitters, and more.",
+                customTitle: "Looking for a specific theme?",
+                customDesc: "I can design a custom gnome to match any profession or passion.",
+                recentTitle: "Recent Creations",
+                ctaText: "See something you like? Let's create something special together.",
+                ctaBtn: "Message on Facebook",
+                copyright: "© 2024 HappyHandsCraft. All rights reserved."
+            },
+            fr: {
+                navBack: "Retour à l'accueil",
+                navTitle: "Galerie des Gnomes",
+                mainTitle: "Des gnomes uniques, faits juste pour vous",
+                mainDesc: "Apportez un peu de chance et beaucoup de personnalité à votre foyer avec mes gnomes de sport et saisonniers faits à la main. Je crée ces petits compagnons uniques pour célébrer les équipes que vous aimez et les saisons que vous appréciez.",
+                item1Title: "Gnomes de sport personnalisés",
+                item1Desc: "Créés spécialement pour vos équipes professionnelles ou locales préférées.",
+                item2Title: "Coups de cœur saisonniers",
+                item2Desc: "Des designs thématiques pour les fêtes qui illumineront votre maison.",
+                item3Title: "Héros de la communauté",
+                item3Desc: "Montrez votre appréciation avec un gnome infirmier, docteur ou enseignant.",
+                item4Title: "Personnages fantastiques",
+                item4Desc: "Ajoutez une touche de plaisir à votre décor avec des gnomes vikings, magiciens ou de jardin.",
+                item5Title: "Passe-temps et intérêts",
+                item5Desc: "Des designs personnalisés pour les chefs, les pêcheurs, les tricoteuses et plus encore.",
+                customTitle: "Vous cherchez un thème spécifique ?",
+                customDesc: "Je peux concevoir un gnome sur mesure pour correspondre à n’importe quelle profession ou passion.",
+                recentTitle: "Créations Récentes",
+                ctaText: "Vous voyez quelque chose qui vous plaît ? Créons quelque chose de spécial ensemble.",
+                ctaBtn: "Message sur Facebook",
+                copyright: "© 2024 HappyHandsCraft. Tous droits réservés."
+            }
+        };
+
+        function setLanguage(lang) {
+            const content = translations[lang];
+            
+            // Text Updates
+            document.getElementById('nav-back').innerText = content.navBack;
+            document.getElementById('nav-title').innerText = content.navTitle;
+            document.getElementById('main-title').innerText = content.mainTitle;
+            document.getElementById('main-desc').innerText = content.mainDesc;
+            
+            document.getElementById('item1-title').innerText = content.item1Title;
+            document.getElementById('item1-desc').innerText = content.item1Desc;
+            document.getElementById('item2-title').innerText = content.item2Title;
+            document.getElementById('item2-desc').innerText = content.item2Desc;
+            document.getElementById('item3-title').innerText = content.item3Title;
+            document.getElementById('item3-desc').innerText = content.item3Desc;
+            document.getElementById('item4-title').innerText = content.item4Title;
+            document.getElementById('item4-desc').innerText = content.item4Desc;
+            document.getElementById('item5-title').innerText = content.item5Title;
+            document.getElementById('item5-desc').innerText = content.item5Desc;
+            
+            document.getElementById('custom-title').innerText = content.customTitle;
+            document.getElementById('custom-desc').innerText = content.customDesc;
+            
+            document.getElementById('recent-title').innerText = content.recentTitle;
+            document.getElementById('cta-text').innerText = content.ctaText;
+            document.getElementById('cta-btn').innerText = content.ctaBtn;
+            document.getElementById('copyright').innerText = content.copyright;
+
+            // Button Styling
+            if (lang === 'en') {
+                document.getElementById('btn-en').className = "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors";
+                document.getElementById('btn-fr').className = "text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors";
+            } else {
+                document.getElementById('btn-en').className = "text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors";
+                document.getElementById('btn-fr').className = "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors";
+            }
+        }
+    </script>
 
 </body>
 </html>
