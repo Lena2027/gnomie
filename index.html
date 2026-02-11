@@ -51,19 +51,27 @@
     <nav class="fixed w-full z-50 bg-warm-beige/95 backdrop-blur-sm shadow-sm border-b border-stone-200 transition-all duration-300" id="navbar">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
+                
                 <div class="flex-shrink-0 flex items-center gap-2">
                     <span class="material-symbols-outlined text-deep-chestnut text-3xl">sentiment_satisfied</span>
-                    <h1 class="font-serif text-2xl font-bold text-deep-chestnut tracking-wide">Happy Hands Craft</h1>
+                    <h1 class="font-serif text-2xl font-bold text-deep-chestnut tracking-wide">Heartfelt Handmade</h1>
                 </div>
-                <div class="flex items-center space-x-4">
-                    <button class="text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors" id="btn-en" onclick="setLanguage('en')">EN</button>
-                    <span class="text-gray-400">|</span>
-                    <button class="text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors" id="btn-fr" onclick="setLanguage('fr')">FR</button>
+                
+                <div class="flex items-center space-x-6">
+                    <a href="about.html" class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">About</a>
+                    
+                    <a href="gallery.html" class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">Gallery</a>
+                    
+                    <div class="flex items-center space-x-2 border-l border-gray-300 pl-6">
+                        <button class="text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors" id="btn-en" onclick="setLanguage('en')">EN</button>
+                        <span class="text-gray-400">|</span>
+                        <button class="text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors" id="btn-fr" onclick="setLanguage('fr')">FR</button>
+                    </div>
                 </div>
+
             </div>
         </div>
     </nav>
-
     <header class="relative pt-20">
         <div class="relative h-[600px] w-full overflow-hidden">
             <img alt="Cozy workshop" class="w-full h-full object-cover brightness-75" src="heartfelt-workshop.jpg">
@@ -74,9 +82,6 @@
                 <a class="bg-muted-gold hover:bg-yellow-600 text-white font-bold py-4 px-10 rounded-full shadow-lg transform transition hover:-translate-y-1 text-lg" href="#collection" id="hero-cta">
                     View Collection
                 </a>
-                <a class="border-2 border-white text-white hover:bg-white hover:text-deep-chestnut font-bold py-4 px-10 rounded-full shadow-lg transform transition hover:-translate-y-1 text-lg" href="about.html">
-                        About Me
-                    </a>
             </div>
         </div>
     </header>
