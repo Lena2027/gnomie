@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>About - Happy Hands Craft</title>
+    <title>About - Heartfelt Handmade</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
@@ -35,9 +35,18 @@
             <div class="flex justify-between items-center h-20">
                 <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
                     <span class="material-symbols-outlined text-deep-chestnut text-3xl">arrow_back</span>
-                    <span class="font-bold text-deep-chestnut">Back to Home</span>
+                    <span class="font-bold text-deep-chestnut" id="nav-back">Back to Home</span>
                 </a>
-                <h1 class="font-serif text-2xl font-bold text-deep-chestnut">About the Artist</h1>
+                
+                <div class="flex items-center gap-6">
+                    <h1 class="hidden md:block font-serif text-2xl font-bold text-deep-chestnut" id="nav-title">About the Artist</h1>
+                    
+                    <div class="flex items-center space-x-2 border-l border-gray-300 pl-6">
+                        <button class="text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors" id="btn-en" onclick="setLanguage('en')">EN</button>
+                        <span class="text-gray-400">|</span>
+                        <button class="text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors" id="btn-fr" onclick="setLanguage('fr')">FR</button>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -46,18 +55,22 @@
         
         <div class="flex flex-col md:flex-row items-center gap-12 mb-16">
             <div class="md:w-1/2">
-                <img src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?q=80&w=2069&auto=format&fit=crop" alt="Artist working" class="rounded-xl shadow-lg w-full h-[400px] object-cover">
+                <img src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?q=80&w=2069&auto=format&fit=crop" alt="Hanna Landry" class="rounded-xl shadow-lg w-full h-[400px] object-cover">
             </div>
             <div class="md:w-1/2 space-y-6">
-                <span class="text-muted-gold font-bold tracking-widest text-sm uppercase">My Story</span>
-                <h2 class="font-serif text-4xl text-deep-chestnut">Crafting Memories with Every Stitch</h2>
-                <p class="text-gray-600 leading-relaxed">
-                    Hi! I’m Hanna Landry, a Dieppe, New Brunswick-based maker with a passion for two things: sports and storytelling. I started making my custom sports gnomes because every fan needs a little extra luck on their side!
+                <span class="text-muted-gold font-bold tracking-widest text-sm uppercase" id="about-label">Meet the Maker</span>
+                <h2 class="font-serif text-4xl text-deep-chestnut" id="about-headline">Sports, Storytelling & Soulful Keepsakes</h2>
+                
+                <p class="text-gray-600 leading-relaxed" id="about-p1">
+                    Hi! I’m Hanna Landry, a Dieppe, New Brunswick-based maker with a passion for two things: sports and storytelling.
                 </p>
-                <p class="text-gray-600 leading-relaxed">
+                <p class="text-gray-600 leading-relaxed" id="about-p2">
+                    I started making my custom sports gnomes because every fan needs a little extra luck on their side!
+                </p>
+                <p class="text-gray-600 leading-relaxed" id="about-p3">
                     But my work took on a new meaning after the passing of my father-in-law. Creating Memory Bears and Pillows has become a way for me to help others heal while fulfilling my own heart.
                 </p>
-                <p class="text-gray-600 leading-relaxed">
+                <p class="text-gray-600 leading-relaxed font-bold text-deep-chestnut" id="about-p4">
                     Whether you are looking for a unique gift for a sports lover or a soulful keepsake to honor a memory, I’m here to craft something special just for you.
                 </p>
             </div>
@@ -65,19 +78,19 @@
 
         <div class="grid md:grid-cols-3 gap-8 text-center border-t border-gray-300 pt-16">
             <div class="p-4">
+                <span class="material-symbols-outlined text-4xl text-deep-chestnut mb-3">location_on</span>
+                <h3 class="font-serif text-xl font-bold mb-2" id="val1-title">Dieppe Based</h3>
+                <p class="text-sm text-gray-600" id="val1-desc">Proudly crafting handmade treasures right here in Dieppe, New Brunswick.</p>
+            </div>
+            <div class="p-4">
+                <span class="material-symbols-outlined text-4xl text-deep-chestnut mb-3">sports_soccer</span>
+                <h3 class="font-serif text-xl font-bold mb-2" id="val2-title">Sports Spirit</h3>
+                <p class="text-sm text-gray-600" id="val2-desc">Custom gnomes to bring good luck to your favorite team and show your fan pride.</p>
+            </div>
+            <div class="p-4">
                 <span class="material-symbols-outlined text-4xl text-deep-chestnut mb-3">favorite</span>
-                <h3 class="font-serif text-xl font-bold mb-2">Made with Love</h3>
-                <p class="text-sm text-gray-600">Every doll is handmade by me in my home studio in Ontario, ensuring personal attention to detail.</p>
-            </div>
-            <div class="p-4">
-                <span class="material-symbols-outlined text-4xl text-deep-chestnut mb-3">recycling</span>
-                <h3 class="font-serif text-xl font-bold mb-2">Sustainable</h3>
-                <p class="text-sm text-gray-600">I believe in upcycling and giving new life to textiles that might otherwise be forgotten.</p>
-            </div>
-            <div class="p-4">
-                <span class="material-symbols-outlined text-4xl text-deep-chestnut mb-3">verified</span>
-                <h3 class="font-serif text-xl font-bold mb-2">Quality</h3>
-                <p class="text-sm text-gray-600">I use high-quality safety eyes, durable threads, and premium stuffing to ensure your keepsake lasts.</p>
+                <h3 class="font-serif text-xl font-bold mb-2" id="val3-title">Healing Art</h3>
+                <p class="text-sm text-gray-600" id="val3-desc">Transforming cherished clothing into memory bears that help hearts heal.</p>
             </div>
         </div>
 
@@ -85,9 +98,81 @@
 
     <footer class="bg-deep-chestnut text-warm-beige py-8 border-t-4 border-muted-gold mt-12">
         <div class="text-center">
-            <p class="text-sm opacity-60">© 2024 Heartfelt Handmade.</p>
+            <p class="text-sm opacity-60" id="copyright">© 2024 Heartfelt Handmade. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // 번역 데이터 (영어 & 프랑스어)
+        const translations = {
+            en: {
+                navBack: "Back to Home",
+                navTitle: "About the Artist",
+                aboutLabel: "Meet the Maker",
+                aboutHeadline: "Sports, Storytelling & Soulful Keepsakes",
+                aboutP1: "Hi! I’m Hanna Landry, a Dieppe, New Brunswick-based maker with a passion for two things: sports and storytelling.",
+                aboutP2: "I started making my custom sports gnomes because every fan needs a little extra luck on their side!",
+                aboutP3: "But my work took on a new meaning after the passing of my father-in-law. Creating Memory Bears and Pillows has become a way for me to help others heal while fulfilling my own heart.",
+                aboutP4: "Whether you are looking for a unique gift for a sports lover or a soulful keepsake to honor a memory, I’m here to craft something special just for you.",
+                val1Title: "Dieppe Based",
+                val1Desc: "Proudly crafting handmade treasures right here in Dieppe, New Brunswick.",
+                val2Title: "Sports Spirit",
+                val2Desc: "Custom gnomes to bring good luck to your favorite team and show your fan pride.",
+                val3Title: "Healing Art",
+                val3Desc: "Transforming cherished clothing into memory bears that help hearts heal.",
+                copyright: "© 2024 Heartfelt Handmade. All rights reserved."
+            },
+            fr: {
+                navBack: "Retour à l'accueil",
+                navTitle: "À propos de l'artiste",
+                aboutLabel: "Rencontrez la créatrice",
+                aboutHeadline: "Bienvenue chez HappyHandsCraft !",
+                aboutP1: "Salut ! Je m'appelle Hanna Landry. Je suis une créatrice située à Dieppe, au Nouveau-Brunswick, avec une passion pour deux choses : le sport et les belles histoires.",
+                aboutP2: "J'ai commencé à fabriquer mes gnomes de sport personnalisés parce que je me suis dit que chaque fan a besoin d'un petit peu de chance de son côté !",
+                aboutP3: "Mais mon travail a pris un tout nouveau sens après le décès de mon beau-père. Créer des oursons et des oreillers souvenirs est devenu pour moi une façon d'aider les autres à guérir, tout en remplissant mon propre cœur.",
+                aboutP4: "Que vous cherchiez un cadeau unique pour un mordu de sport ou un souvenir précieux pour honorer une mémoire, je suis ici pour créer quelque chose de spécial, juste pour vous.",
+                val1Title: "Basée à Dieppe",
+                val1Desc: "Fière de créer des trésors faits main ici même à Dieppe, au Nouveau-Brunswick.",
+                val2Title: "Esprit Sportif",
+                val2Desc: "Des gnomes personnalisés pour porter chance à votre équipe préférée et afficher votre fierté.",
+                val3Title: "Art Thérapeutique",
+                val3Desc: "Transformer des vêtements chéris en ours mémoriels qui aident les cœurs à guérir.",
+                copyright: "© 2024 Heartfelt Handmade. Tous droits réservés."
+            }
+        };
+
+        function setLanguage(lang) {
+            const content = translations[lang];
+
+            // 1. 텍스트 변경
+            document.getElementById('nav-back').innerText = content.navBack;
+            document.getElementById('nav-title').innerText = content.navTitle;
+            document.getElementById('about-label').innerText = content.aboutLabel;
+            document.getElementById('about-headline').innerText = content.aboutHeadline;
+            document.getElementById('about-p1').innerText = content.aboutP1;
+            document.getElementById('about-p2').innerText = content.aboutP2;
+            document.getElementById('about-p3').innerText = content.aboutP3;
+            document.getElementById('about-p4').innerText = content.aboutP4;
+            
+            document.getElementById('val1-title').innerText = content.val1Title;
+            document.getElementById('val1-desc').innerText = content.val1Desc;
+            document.getElementById('val2-title').innerText = content.val2Title;
+            document.getElementById('val2-desc').innerText = content.val2Desc;
+            document.getElementById('val3-title').innerText = content.val3Title;
+            document.getElementById('val3-desc').innerText = content.val3Desc;
+            
+            document.getElementById('copyright').innerText = content.copyright;
+
+            // 2. 버튼 스타일 변경
+            if (lang === 'en') {
+                document.getElementById('btn-en').className = "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors";
+                document.getElementById('btn-fr').className = "text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors";
+            } else {
+                document.getElementById('btn-en').className = "text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors";
+                document.getElementById('btn-fr').className = "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors";
+            }
+        }
+    </script>
 
 </body>
 </html>
