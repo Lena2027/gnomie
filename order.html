@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -7,9 +8,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
@@ -29,71 +33,130 @@
         }
     </script>
 </head>
+
 <body class="bg-warm-beige text-gray-800 font-sans antialiased">
 
-    <nav class="w-full bg-warm-beige/95 backdrop-blur-sm shadow-sm border-b border-stone-200 sticky top-0 z-50">
+    <nav class="fixed w-full z-50 bg-warm-beige/95 backdrop-blur-sm shadow-sm border-b border-stone-200 transition-all duration-300"
+        id="navbar">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                    <span class="material-symbols-outlined text-deep-chestnut text-3xl">arrow_back</span>
-                    <span class="font-bold text-deep-chestnut" id="nav-back">Back to Home</span>
+            <div class="flex justify-between items-center h-20 transition-all duration-300" id="nav-container">
+
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2 hover:opacity-80 transition-opacity">
+                    <span class="material-symbols-outlined text-deep-chestnut text-3xl">sentiment_satisfied</span>
+                    <h1 class="font-serif text-xl md:text-2xl font-bold text-deep-chestnut tracking-wide">Happy Hands
+                        Craft</h1>
                 </a>
-                
-                <div class="flex items-center gap-6">
-                    <h1 class="hidden md:block font-serif text-2xl font-bold text-deep-chestnut" id="nav-title">How to Order</h1>
+
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="about.html"
+                        class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">About</a>
+                    <a href="gallery.html"
+                        class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">Gnome</a>
+                    <a href="gallery1.html"
+                        class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">Memory Bear</a>
+                    <a href="order.html"
+                        class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">Order</a>
 
                     <div class="flex items-center space-x-2 border-l border-gray-300 pl-6">
-                        <button class="text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors" id="btn-en" onclick="setLanguage('en')">EN</button>
+                        <button
+                            class="text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors"
+                            id="btn-en" onclick="setLanguage('en')">EN</button>
                         <span class="text-gray-400">|</span>
-                        <button class="text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors" id="btn-fr" onclick="setLanguage('fr')">FR</button>
+                        <button class="text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors"
+                            id="btn-fr" onclick="setLanguage('fr')">FR</button>
                     </div>
                 </div>
+
+                <div class="md:hidden flex items-center gap-4">
+                    <div class="flex items-center space-x-2">
+                        <button class="text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut"
+                            id="mob-header-en" onclick="setLanguage('en')">EN</button>
+                        <span class="text-gray-300">|</span>
+                        <button class="text-sm font-normal text-gray-500" id="mob-header-fr"
+                            onclick="setLanguage('fr')">FR</button>
+                    </div>
+
+                    <button onclick="toggleMobileMenu()" class="text-deep-chestnut p-1 focus:outline-none">
+                        <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="hidden md:hidden bg-warm-beige border-b border-stone-200 shadow-lg absolute w-full left-0 top-full"
+            id="mobile-menu">
+            <div class="px-4 py-4 space-y-4 flex flex-col text-center">
+                <a href="about.html" class="block text-gray-700 hover:text-deep-chestnut font-medium py-2">About</a>
+                <a href="gallery.html" class="block text-gray-700 hover:text-deep-chestnut font-medium py-2">Gnome</a>
+                <a href="gallery1.html" class="block text-gray-700 hover:text-deep-chestnut font-medium py-2">Memory
+                    Bear</a>
+                <a href="order.html" class="block text-gray-700 hover:text-deep-chestnut font-medium py-2">Order</a>
             </div>
         </div>
     </nav>
 
-    <section class="py-16 px-4 max-w-4xl mx-auto">
+    <section class="pt-32 pb-16 px-4 max-w-4xl mx-auto">
         <div class="text-center mb-16">
-            <h2 class="font-serif text-4xl md:text-5xl text-deep-chestnut mb-6" id="page-headline">Start Your Custom Project</h2>
+            <h2 class="font-serif text-4xl md:text-5xl text-deep-chestnut mb-6" id="page-headline">Start Your Custom
+                Project</h2>
             <p class="text-lg text-gray-600 max-w-2xl mx-auto" id="page-subhead">
-                Ready to start your custom project? Follow these simple steps to order your custom Gnome or Memorial keepsake.
+                Ready to start your custom project? Follow these simple steps to order your custom Gnome or Memorial
+                keepsake.
             </p>
         </div>
 
-        <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-stone-300 before:to-transparent">
+        <div
+            class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-stone-300 before:to-transparent">
 
-            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-muted-gold text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+            <div
+                class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                <div
+                    class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-muted-gold text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
                     <span class="material-symbols-outlined font-bold">search</span>
                 </div>
-                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl shadow-sm border border-stone-100">
-                    <h3 class="font-serif text-2xl font-bold text-deep-chestnut mb-2" id="step1-title">1. Browse & Choose</h3>
+                <div
+                    class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl shadow-sm border border-stone-100">
+                    <h3 class="font-serif text-2xl font-bold text-deep-chestnut mb-2" id="step1-title">1. Browse &
+                        Choose</h3>
                     <p class="text-gray-600 leading-relaxed" id="step1-desc">
-                        Look at the photos here or on my Facebook page to decide on a custom Gnome or a Memorial keepsake.
+                        Look at the photos here or on my Facebook page to decide on a custom Gnome or a Memorial
+                        keepsake.
                     </p>
                 </div>
             </div>
 
-            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-deep-chestnut text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+            <div
+                class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                <div
+                    class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-deep-chestnut text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
                     <span class="material-symbols-outlined font-bold">mail</span>
                 </div>
-                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl shadow-sm border border-stone-100">
-                    <h3 class="font-serif text-2xl font-bold text-deep-chestnut mb-2" id="step2-title">2. Get in Touch</h3>
+                <div
+                    class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl shadow-sm border border-stone-100">
+                    <h3 class="font-serif text-2xl font-bold text-deep-chestnut mb-2" id="step2-title">2. Get in Touch
+                    </h3>
                     <p class="text-gray-600 leading-relaxed" id="step2-desc">
-                        Send me a message through Facebook or <a href="mailto:happyhandsnb@gmail.com" class="text-muted-gold hover:underline font-bold">happyhandsnb@gmail.com</a> to discuss your theme or fabric.
+                        Send me a message through Facebook or <a href="mailto:happyhandsnb@gmail.com"
+                            class="text-muted-gold hover:underline font-bold">happyhandsnb@gmail.com</a> to discuss your
+                        theme or fabric.
                     </p>
                 </div>
             </div>
 
-            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-forest-green text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+            <div
+                class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                <div
+                    class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-forest-green text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
                     <span class="material-symbols-outlined font-bold">location_on</span>
                 </div>
-                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl shadow-sm border border-stone-100">
-                    <h3 class="font-serif text-2xl font-bold text-deep-chestnut mb-2" id="step3-title">3. Local Pick-up/Drop-off</h3>
+                <div
+                    class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl shadow-sm border border-stone-100">
+                    <h3 class="font-serif text-2xl font-bold text-deep-chestnut mb-2" id="step3-title">3. Local
+                        Pick-up/Drop-off</h3>
                     <p class="text-gray-600 leading-relaxed" id="step3-desc">
-                        For those in Dieppe and surrounding areas, we can arrange a convenient time for you to drop off your clothing or pick up your finished order.
+                        For those in Dieppe and surrounding areas, we can arrange a convenient time for you to drop off
+                        your clothing or pick up your finished order.
                     </p>
                 </div>
             </div>
@@ -101,7 +164,8 @@
         </div>
 
         <div class="mt-16 text-center">
-            <a href="https://www.facebook.com/" target="_blank" class="bg-deep-chestnut hover:bg-[#4a332a] text-warm-beige font-bold py-4 px-10 rounded-full shadow-lg transition-all inline-flex items-center gap-3 text-lg transform hover:-translate-y-1">
+            <a href="https://www.facebook.com/" target="_blank"
+                class="bg-deep-chestnut hover:bg-[#4a332a] text-warm-beige font-bold py-4 px-10 rounded-full shadow-lg transition-all inline-flex items-center gap-3 text-lg transform hover:-translate-y-1">
                 <span class="material-symbols-outlined">chat_bubble</span>
                 <span id="cta-btn">Message Me to Order</span>
             </a>
@@ -154,34 +218,82 @@
 
         function setLanguage(lang) {
             const content = translations[lang];
-            
+
             // Text Updates
-            document.getElementById('nav-back').innerText = content.navBack;
-            document.getElementById('nav-title').innerText = content.navTitle;
             document.getElementById('page-headline').innerText = content.pageHeadline;
             document.getElementById('page-subhead').innerText = content.pageSubhead;
-            
+
             document.getElementById('step1-title').innerText = content.step1Title;
             document.getElementById('step1-desc').innerText = content.step1Desc;
             document.getElementById('step2-title').innerHTML = content.step2Title;
             document.getElementById('step2-desc').innerHTML = content.step2Desc;
             document.getElementById('step3-title').innerText = content.step3Title;
             document.getElementById('step3-desc').innerText = content.step3Desc;
-            
+
             document.getElementById('cta-btn').innerText = content.ctaBtn;
             document.getElementById('email-note').innerText = content.emailNote;
             document.getElementById('copyright').innerText = content.copyright;
 
-            // Button Styling
-            if (lang === 'en') {
-                document.getElementById('btn-en').className = "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors";
-                document.getElementById('btn-fr').className = "text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors";
-            } else {
-                document.getElementById('btn-en').className = "text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors";
-                document.getElementById('btn-fr').className = "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors";
+            // 1. PC용 버튼 스타일 업데이트
+            const btnEn = document.getElementById('btn-en');
+            const btnFr = document.getElementById('btn-fr');
+
+            if (btnEn && btnFr) {
+                btnEn.className = lang === 'en'
+                    ? "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors"
+                    : "text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors";
+
+                btnFr.className = lang === 'fr'
+                    ? "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors"
+                    : "text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors";
+            }
+
+            // 2. 모바일 상단 버튼 스타일 업데이트
+            const mobHeaderEn = document.getElementById('mob-header-en');
+            const mobHeaderFr = document.getElementById('mob-header-fr');
+
+            if (mobHeaderEn && mobHeaderFr) {
+                mobHeaderEn.className = lang === 'en'
+                    ? "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut"
+                    : "text-sm font-normal text-gray-500";
+
+                mobHeaderFr.className = lang === 'fr'
+                    ? "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut"
+                    : "text-sm font-normal text-gray-500";
             }
         }
+
+        // 모바일 메뉴 토글 함수
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.innerText = 'close';
+            } else {
+                menu.classList.add('hidden');
+                icon.innerText = 'menu';
+            }
+        }
+
+        // 스크롤 시 네비게이션 바 그림자 효과
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            const navContainer = document.getElementById('nav-container');
+
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+                navContainer.classList.remove('h-20');
+                navContainer.classList.add('h-16');
+            } else {
+                nav.classList.remove('shadow-md');
+                navContainer.classList.remove('h-16');
+                navContainer.classList.add('h-20');
+            }
+        });
     </script>
 
 </body>
+
 </html>

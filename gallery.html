@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -7,9 +8,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
@@ -29,32 +33,73 @@
         }
     </script>
 </head>
+
 <body class="bg-warm-beige text-gray-800 font-sans antialiased">
 
-    <nav class="w-full bg-warm-beige/95 backdrop-blur-sm shadow-sm border-b border-stone-200 sticky top-0 z-50">
+    <nav class="fixed w-full z-50 bg-warm-beige/95 backdrop-blur-sm shadow-sm border-b border-stone-200 transition-all duration-300"
+        id="navbar">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                    <span class="material-symbols-outlined text-deep-chestnut text-3xl">arrow_back</span>
-                    <span class="font-bold text-deep-chestnut" id="nav-back">Back to Home</span>
+            <div class="flex justify-between items-center h-20 transition-all duration-300" id="nav-container">
+
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2 hover:opacity-80 transition-opacity">
+                    <span class="material-symbols-outlined text-deep-chestnut text-3xl">sentiment_satisfied</span>
+                    <h1 class="font-serif text-xl md:text-2xl font-bold text-deep-chestnut tracking-wide">Happy Hands
+                        Craft</h1>
                 </a>
-                
-                <div class="flex items-center gap-6">
-                    <h1 class="hidden md:block font-serif text-2xl font-bold text-deep-chestnut" id="nav-title">Gnome</h1>
+
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="about.html"
+                        class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">About</a>
+                    <a href="gallery.html"
+                        class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">Gnome</a>
+                    <a href="gallery1.html"
+                        class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">Memory Bear</a>
+                    <a href="order.html"
+                        class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">Order</a>
 
                     <div class="flex items-center space-x-2 border-l border-gray-300 pl-6">
-                        <button class="text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors" id="btn-en" onclick="setLanguage('en')">EN</button>
+                        <button
+                            class="text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors"
+                            id="btn-en" onclick="setLanguage('en')">EN</button>
                         <span class="text-gray-400">|</span>
-                        <button class="text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors" id="btn-fr" onclick="setLanguage('fr')">FR</button>
+                        <button class="text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors"
+                            id="btn-fr" onclick="setLanguage('fr')">FR</button>
                     </div>
                 </div>
+
+                <div class="md:hidden flex items-center gap-4">
+                    <div class="flex items-center space-x-2">
+                        <button class="text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut"
+                            id="mob-header-en" onclick="setLanguage('en')">EN</button>
+                        <span class="text-gray-300">|</span>
+                        <button class="text-sm font-normal text-gray-500" id="mob-header-fr"
+                            onclick="setLanguage('fr')">FR</button>
+                    </div>
+
+                    <button onclick="toggleMobileMenu()" class="text-deep-chestnut p-1 focus:outline-none">
+                        <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="hidden md:hidden bg-warm-beige border-b border-stone-200 shadow-lg absolute w-full left-0 top-full"
+            id="mobile-menu">
+            <div class="px-4 py-4 space-y-4 flex flex-col text-center">
+                <a href="about.html" class="block text-gray-700 hover:text-deep-chestnut font-medium py-2">About</a>
+                <a href="gallery.html" class="block text-gray-700 hover:text-deep-chestnut font-medium py-2">Gnome</a>
+                <a href="gallery1.html" class="block text-gray-700 hover:text-deep-chestnut font-medium py-2">Memory
+                    Bear</a>
+                <a href="order.html" class="block text-gray-700 hover:text-deep-chestnut font-medium py-2">Order</a>
             </div>
         </div>
     </nav>
 
-    <section class="py-16 px-4 max-w-4xl mx-auto text-center">
-        <h2 class="font-serif text-4xl md:text-5xl text-forest-green mb-6" id="main-title">One of a Kind Gnomes, Made for You</h2>
-        
+    <section class="pt-32 pb-16 px-4 max-w-4xl mx-auto text-center">
+        <h2 class="font-serif text-4xl md:text-5xl text-forest-green mb-6" id="main-title">One of a Kind Gnomes, Made
+            for You</h2>
+
         <div class="text-lg text-gray-600 leading-relaxed mb-12 max-w-3xl mx-auto">
             <p id="main-desc">
                 Bring a little luck and a lot of personality to your home with my Handcrafted Sports & Seasonal Gnomes.
@@ -62,12 +107,14 @@
             </p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8 mb-12 text-left bg-white p-8 rounded-xl shadow-sm border border-stone-200">
+        <div
+            class="grid md:grid-cols-2 gap-8 mb-12 text-left bg-white p-8 rounded-xl shadow-sm border border-stone-200">
             <div class="flex gap-4">
                 <span class="material-symbols-outlined text-3xl text-forest-green shrink-0">sports_soccer</span>
                 <div>
                     <h3 class="font-bold text-deep-chestnut text-lg" id="item1-title">Custom Sports Gnomes</h3>
-                    <p class="text-sm text-gray-600" id="item1-desc">Personalized for your favorite pro or local teams.</p>
+                    <p class="text-sm text-gray-600" id="item1-desc">Personalized for your favorite pro or local teams.
+                    </p>
                 </div>
             </div>
             <div class="flex gap-4">
@@ -81,58 +128,75 @@
                 <span class="material-symbols-outlined text-3xl text-forest-green shrink-0">medical_services</span>
                 <div>
                     <h3 class="font-bold text-deep-chestnut text-lg" id="item3-title">Community Heroes</h3>
-                    <p class="text-sm text-gray-600" id="item3-desc">Show appreciation with Nurse, Doctor, or Teacher gnomes.</p>
+                    <p class="text-sm text-gray-600" id="item3-desc">Show appreciation with Nurse, Doctor, or Teacher
+                        gnomes.</p>
                 </div>
             </div>
             <div class="flex gap-4">
                 <span class="material-symbols-outlined text-3xl text-forest-green shrink-0">auto_awesome</span>
                 <div>
                     <h3 class="font-bold text-deep-chestnut text-lg" id="item4-title">Whimsical Characters</h3>
-                    <p class="text-sm text-gray-600" id="item4-desc">Bring fun to your decor with Vikings, Wizards, or Garden gnomes.</p>
+                    <p class="text-sm text-gray-600" id="item4-desc">Bring fun to your decor with Vikings, Wizards, or
+                        Garden gnomes.</p>
                 </div>
             </div>
             <div class="flex gap-4 md:col-span-2">
                 <span class="material-symbols-outlined text-3xl text-forest-green shrink-0">palette</span>
                 <div>
                     <h3 class="font-bold text-deep-chestnut text-lg" id="item5-title">Hobbies & Interests</h3>
-                    <p class="text-sm text-gray-600" id="item5-desc">Personalized designs for chefs, fishermen, knitters, and more.</p>
+                    <p class="text-sm text-gray-600" id="item5-desc">Personalized designs for chefs, fishermen,
+                        knitters, and more.</p>
                 </div>
             </div>
         </div>
 
         <div class="bg-forest-green/10 p-6 rounded-lg inline-block">
-            <h3 class="font-serif text-xl font-bold text-forest-green mb-2" id="custom-title">Looking for a specific theme?</h3>
-            <p class="text-gray-700" id="custom-desc">I can design a custom gnome to match any profession or passion.</p>
+            <h3 class="font-serif text-xl font-bold text-forest-green mb-2" id="custom-title">Looking for a specific
+                theme?</h3>
+            <p class="text-gray-700" id="custom-desc">I can design a custom gnome to match any profession or passion.
+            </p>
         </div>
     </section>
 
     <section class="pb-20 px-4 max-w-6xl mx-auto">
-        <h3 class="font-serif text-3xl text-deep-chestnut mb-8 text-center border-b border-muted-gold pb-4 inline-block w-full" id="recent-title">Recent Creations</h3>
-        
+        <h3 class="font-serif text-3xl text-deep-chestnut mb-8 text-center border-b border-muted-gold pb-4 inline-block w-full"
+            id="recent-title">Recent Creations</h3>
+
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                <img src="https://images.unsplash.com/photo-1598545806659-158850607c34?q=80&w=2070&auto=format&fit=crop" alt="Gnome 1" class="w-full h-64 object-cover rounded">
+                <img src="01.png" alt="Gnome 1" class="w-full aspect-[3/4] object-cover rounded">
             </div>
             <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                <img src="https://images.unsplash.com/photo-1544778330-3b4df3d0a28f?q=80&w=2070&auto=format&fit=crop" alt="Gnome 2" class="w-full h-64 object-cover rounded">
+                <img src="02.png" alt="Gnome 2" class="w-full aspect-[3/4] object-cover rounded">
             </div>
             <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                <img src="https://images.unsplash.com/photo-1512413394635-5ed561454393?q=80&w=2070&auto=format&fit=crop" alt="Gnome 3" class="w-full h-64 object-cover rounded">
+                <img src="04.png" alt="Gnome 3" class="w-full aspect-[3/4] object-cover rounded">
             </div>
             <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                <img src="https://images.unsplash.com/photo-1607344645866-009c320c5a39?q=80&w=2070&auto=format&fit=crop" alt="Gnome 4" class="w-full h-64 object-cover rounded">
+                <img src="05.png" alt="Gnome 4" class="w-full aspect-[3/4] object-cover rounded">
             </div>
             <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                <img src="https://images.unsplash.com/photo-1576777647209-e8733d7b851d?q=80&w=1974&auto=format&fit=crop" alt="Gnome 5" class="w-full h-64 object-cover rounded">
+                <img src="06.png" alt="Gnome 5" class="w-full aspect-[3/4] object-cover rounded">
             </div>
             <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                <img src="https://images.unsplash.com/photo-1545048702-79362596cdc9?q=80&w=2070&auto=format&fit=crop" alt="Gnome 6" class="w-full h-64 object-cover rounded">
+                <img src="07.png" alt="Gnome 6" class="w-full aspect-[3/4] object-cover rounded">
+            </div>
+            <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <img src="08.png" alt="Gnome 7" class="w-full aspect-[3/4] object-cover rounded">
+            </div>
+            <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <img src="09.png" alt="Gnome 8" class="w-full aspect-[3/4] object-cover rounded">
+            </div>
+            <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <img src="010.png" alt="Gnome 9" class="w-full aspect-[3/4] object-cover rounded">
             </div>
         </div>
 
         <div class="mt-16 text-center">
-            <p class="text-gray-600 mb-6" id="cta-text">See something you like? Let's create something special together.</p>
-            <a href="https://www.facebook.com/" target="_blank" class="bg-deep-chestnut hover:bg-[#4a332a] text-warm-beige font-bold py-3 px-8 rounded-full shadow-lg transition-all inline-flex items-center gap-2">
+            <p class="text-gray-600 mb-6" id="cta-text">See something you like? Let's create something special together.
+            </p>
+            <a href="https://www.facebook.com/" target="_blank"
+                class="bg-deep-chestnut hover:bg-[#4a332a] text-warm-beige font-bold py-3 px-8 rounded-full shadow-lg transition-all inline-flex items-center gap-2">
                 <span class="material-symbols-outlined">chat_bubble</span>
                 <span id="cta-btn">Message on Facebook</span>
             </a>
@@ -195,13 +259,11 @@
 
         function setLanguage(lang) {
             const content = translations[lang];
-            
+
             // Text Updates
-            document.getElementById('nav-back').innerText = content.navBack;
-            document.getElementById('nav-title').innerText = content.navTitle;
             document.getElementById('main-title').innerText = content.mainTitle;
             document.getElementById('main-desc').innerText = content.mainDesc;
-            
+
             document.getElementById('item1-title').innerText = content.item1Title;
             document.getElementById('item1-desc').innerText = content.item1Desc;
             document.getElementById('item2-title').innerText = content.item2Title;
@@ -212,25 +274,75 @@
             document.getElementById('item4-desc').innerText = content.item4Desc;
             document.getElementById('item5-title').innerText = content.item5Title;
             document.getElementById('item5-desc').innerText = content.item5Desc;
-            
+
             document.getElementById('custom-title').innerText = content.customTitle;
             document.getElementById('custom-desc').innerText = content.customDesc;
-            
+
             document.getElementById('recent-title').innerText = content.recentTitle;
             document.getElementById('cta-text').innerText = content.ctaText;
             document.getElementById('cta-btn').innerText = content.ctaBtn;
             document.getElementById('copyright').innerText = content.copyright;
 
             // Button Styling
-            if (lang === 'en') {
-                document.getElementById('btn-en').className = "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors";
-                document.getElementById('btn-fr').className = "text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors";
-            } else {
-                document.getElementById('btn-en').className = "text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors";
-                document.getElementById('btn-fr').className = "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors";
+            const btnEn = document.getElementById('btn-en');
+            const btnFr = document.getElementById('btn-fr');
+
+            if (btnEn && btnFr) {
+                btnEn.className = lang === 'en'
+                    ? "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors"
+                    : "text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors";
+
+                btnFr.className = lang === 'fr'
+                    ? "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors"
+                    : "text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors";
+            }
+
+            // 모바일 상단 버튼 스타일 업데이트
+            const mobHeaderEn = document.getElementById('mob-header-en');
+            const mobHeaderFr = document.getElementById('mob-header-fr');
+
+            if (mobHeaderEn && mobHeaderFr) {
+                mobHeaderEn.className = lang === 'en'
+                    ? "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut"
+                    : "text-sm font-normal text-gray-500";
+
+                mobHeaderFr.className = lang === 'fr'
+                    ? "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut"
+                    : "text-sm font-normal text-gray-500";
             }
         }
+
+        // 모바일 메뉴 토글 함수
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.innerText = 'close';
+            } else {
+                menu.classList.add('hidden');
+                icon.innerText = 'menu';
+            }
+        }
+
+        // 스크롤 시 네비게이션 바 그림자 효과
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            const navContainer = document.getElementById('nav-container');
+
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+                navContainer.classList.remove('h-20');
+                navContainer.classList.add('h-16');
+            } else {
+                nav.classList.remove('shadow-md');
+                navContainer.classList.remove('h-16');
+                navContainer.classList.add('h-20');
+            }
+        });
     </script>
 
 </body>
+
 </html>

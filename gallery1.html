@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -7,9 +8,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
@@ -28,38 +32,82 @@
         }
     </script>
 </head>
+
 <body class="bg-warm-beige text-gray-800 font-sans antialiased">
 
-    <nav class="w-full bg-warm-beige/95 backdrop-blur-sm shadow-sm border-b border-stone-200 sticky top-0 z-50">
+    <nav class="fixed w-full z-50 bg-warm-beige/95 backdrop-blur-sm shadow-sm border-b border-stone-200 transition-all duration-300"
+        id="navbar">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                    <span class="material-symbols-outlined text-deep-chestnut text-3xl">arrow_back</span>
-                    <span class="font-bold text-deep-chestnut" id="nav-back">Back to Home</span>
+            <div class="flex justify-between items-center h-20 transition-all duration-300" id="nav-container">
+
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2 hover:opacity-80 transition-opacity">
+                    <span class="material-symbols-outlined text-deep-chestnut text-3xl">sentiment_satisfied</span>
+                    <h1 class="font-serif text-xl md:text-2xl font-bold text-deep-chestnut tracking-wide">Happy Hands
+                        Craft</h1>
                 </a>
-                
-                <div class="flex items-center gap-6">
-                    <h1 class="hidden md:block font-serif text-2xl font-bold text-deep-chestnut" id="nav-title">Memory Bear</h1>
+
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="about.html"
+                        class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">About</a>
+                    <a href="gallery.html"
+                        class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">Gnome</a>
+                    <a href="gallery1.html"
+                        class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">Memory Bear</a>
+                    <a href="order.html"
+                        class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">Order</a>
 
                     <div class="flex items-center space-x-2 border-l border-gray-300 pl-6">
-                        <button class="text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors" id="btn-en" onclick="setLanguage('en')">EN</button>
+                        <button
+                            class="text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors"
+                            id="btn-en" onclick="setLanguage('en')">EN</button>
                         <span class="text-gray-400">|</span>
-                        <button class="text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors" id="btn-fr" onclick="setLanguage('fr')">FR</button>
+                        <button class="text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors"
+                            id="btn-fr" onclick="setLanguage('fr')">FR</button>
                     </div>
                 </div>
+
+                <div class="md:hidden flex items-center gap-4">
+                    <div class="flex items-center space-x-2">
+                        <button class="text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut"
+                            id="mob-header-en" onclick="setLanguage('en')">EN</button>
+                        <span class="text-gray-300">|</span>
+                        <button class="text-sm font-normal text-gray-500" id="mob-header-fr"
+                            onclick="setLanguage('fr')">FR</button>
+                    </div>
+
+                    <button onclick="toggleMobileMenu()" class="text-deep-chestnut p-1 focus:outline-none">
+                        <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="hidden md:hidden bg-warm-beige border-b border-stone-200 shadow-lg absolute w-full left-0 top-full"
+            id="mobile-menu">
+            <div class="px-4 py-4 space-y-4 flex flex-col text-center">
+                <a href="about.html" class="block text-gray-700 hover:text-deep-chestnut font-medium py-2">About</a>
+                <a href="gallery.html" class="block text-gray-700 hover:text-deep-chestnut font-medium py-2">Gnome</a>
+                <a href="gallery1.html" class="block text-gray-700 hover:text-deep-chestnut font-medium py-2">Memory
+                    Bear</a>
+                <a href="order.html" class="block text-gray-700 hover:text-deep-chestnut font-medium py-2">Order</a>
             </div>
         </div>
     </nav>
 
-    <section class="py-16 px-4 max-w-4xl mx-auto text-center">
-        <h2 class="font-serif text-4xl md:text-5xl text-deep-chestnut mb-6" id="main-title">Preserve a Memory, Hold a Legacy</h2>
-        
+    <section class="pt-32 pb-16 px-4 max-w-4xl mx-auto text-center">
+        <h2 class="font-serif text-4xl md:text-5xl text-deep-chestnut mb-6" id="main-title">Preserve a Memory, Hold a
+            Legacy</h2>
+
         <div class="text-lg text-gray-600 leading-relaxed mb-10 max-w-3xl mx-auto space-y-4">
             <p id="main-desc-1">
-                Transform a cherished shirt, blanket, or favorite fabric into a comforting, handcrafted keepsake. These bears and pillows are a beautiful way to keep the spirit of a parent, grandparent, or dear friend close to your heart.
+                Transform a cherished shirt, blanket, or favorite fabric into a comforting, handcrafted keepsake. These
+                bears and pillows are a beautiful way to keep the spirit of a parent, grandparent, or dear friend close
+                to your heart.
             </p>
             <p id="main-desc-2">
-                Crafted with love and respect, each piece is designed to be soft, huggable, and a lasting source of comfort.
+                Crafted with love and respect, each piece is designed to be soft, huggable, and a lasting source of
+                comfort.
             </p>
         </div>
 
@@ -72,69 +120,78 @@
             <div>
                 <span class="material-symbols-outlined text-3xl text-muted-gold mb-2">verified_user</span>
                 <h3 class="font-bold text-deep-chestnut text-lg" id="feat2-title">Quality & Safety</h3>
-                <p class="text-sm text-gray-600" id="feat2-desc">Finished with attention to details and premium, soft filling.</p>
+                <p class="text-sm text-gray-600" id="feat2-desc">Finished with attention to details and premium, soft
+                    filling.</p>
             </div>
             <div>
                 <span class="material-symbols-outlined text-3xl text-muted-gold mb-2">hourglass_top</span>
                 <h3 class="font-bold text-deep-chestnut text-lg" id="feat3-title">A Lasting Heirloom</h3>
-                <p class="text-sm text-gray-600" id="feat3-desc">A timeless connection to be cherished for generations.</p>
+                <p class="text-sm text-gray-600" id="feat3-desc">A timeless connection to be cherished for generations.
+                </p>
             </div>
         </div>
 
         <div class="bg-white p-8 rounded-xl shadow-sm border border-stone-200">
             <h3 class="font-serif text-2xl text-deep-chestnut mb-4" id="pers-title">Personalize Your Keepsake</h3>
-            <p class="text-gray-600 mb-6" id="pers-desc">Make your memory bear or pillow even more special by adding custom details. I can attach:</p>
-            
+            <p class="text-gray-600 mb-6" id="pers-desc">Make your memory bear or pillow even more special by adding
+                custom details. I can attach:</p>
+
             <ul class="grid md:grid-cols-3 gap-4 text-left md:text-center">
                 <li class="flex items-center md:justify-center gap-2 text-gray-700">
-                    <span class="material-symbols-outlined text-deep-chestnut">edit_calendar</span> <span id="pers-item1">Names & Dates</span>
+                    <span class="material-symbols-outlined text-deep-chestnut">edit_calendar</span> <span
+                        id="pers-item1">Names & Dates</span>
                 </li>
                 <li class="flex items-center md:justify-center gap-2 text-gray-700">
-                    <span class="material-symbols-outlined text-deep-chestnut">straighten</span> <span id="pers-item2">Birth Stats (Weight, length, time)</span>
+                    <span class="material-symbols-outlined text-deep-chestnut">straighten</span> <span
+                        id="pers-item2">Birth Stats (Weight, length, time)</span>
                 </li>
                 <li class="flex items-center md:justify-center gap-2 text-gray-700">
-                    <span class="material-symbols-outlined text-deep-chestnut">history_edu</span> <span id="pers-item3">Special Poem or meaningful message</span>
+                    <span class="material-symbols-outlined text-deep-chestnut">history_edu</span> <span
+                        id="pers-item3">Special Poem or meaningful message</span>
                 </li>
             </ul>
         </div>
     </section>
 
     <section class="pb-20 px-4 max-w-6xl mx-auto">
-        <h3 class="font-serif text-3xl text-deep-chestnut mb-8 text-center border-b border-muted-gold pb-4 inline-block w-full" id="recent-title">Recent Creations</h3>
-        
+        <h3 class="font-serif text-3xl text-deep-chestnut mb-8 text-center border-b border-muted-gold pb-4 inline-block w-full"
+            id="recent-title">Recent Creations</h3>
+
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                <img src="1.png" alt="Bear Doll 1" class="w-full h-64 object-cover rounded">
+                <img src="7.png" alt="Bear Doll 1" class="w-full h-64 object-cover rounded">
             </div>
             <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                <img src="2.png" alt="Bear Doll 2" class="w-full h-64 object-cover rounded">
+                <img src="8.png" alt="Bear Doll 2" class="w-full h-64 object-cover rounded">
             </div>
             <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                <img src="3.png" alt="Gnome" class="w-full h-64 object-cover rounded">
+                <img src="1.png" alt="Gnome" class="w-full h-64 object-cover rounded">
             </div>
             <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                <img src="4.png" alt="Bear Detail" class="w-full h-64 object-cover rounded">
+                <img src="5.png" alt="Bear Detail" class="w-full h-64 object-cover rounded">
             </div>
             <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                <img src="5.png" alt="Cozy Bear" class="w-full h-64 object-cover rounded">
-            </div>
-             <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                <img src="https://images.unsplash.com/photo-1516640986064-58a44d061730?q=80&w=2070&auto=format&fit=crop" alt="Cozy Bear" class="w-full h-64 object-cover rounded">
-            </div>
-             <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                <img src="https://images.unsplash.com/photo-1516640986064-58a44d061730?q=80&w=2070&auto=format&fit=crop" alt="Cozy Bear" class="w-full h-64 object-cover rounded">
-            </div>
-             <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                <img src="https://images.unsplash.com/photo-1516640986064-58a44d061730?q=80&w=2070&auto=format&fit=crop" alt="Cozy Bear" class="w-full h-64 object-cover rounded">
+                <img src="10.png" alt="Cozy Bear" class="w-full h-64 object-cover rounded">
             </div>
             <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                <img src="https://images.unsplash.com/photo-1544778330-3b4df3d0a28f?q=80&w=2070&auto=format&fit=crop" alt="Gnome Collection" class="w-full h-64 object-cover rounded">
+                <img src="6.png" alt="Cozy Bear" class="w-full h-64 object-cover rounded">
+            </div>
+            <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <img src="2.png" alt="Cozy Bear" class="w-full h-64 object-cover rounded">
+            </div>
+            <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <img src="3.png" alt="Cozy Bear" class="w-full h-64 object-cover rounded">
+            </div>
+            <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <img src="4.png" alt="Gnome Collection" class="w-full h-64 object-cover rounded">
             </div>
         </div>
 
         <div class="mt-16 text-center">
-            <p class="text-gray-600 mb-6" id="cta-text">See something you like? Let's create something special together.</p>
-            <a href="https://www.facebook.com/" target="_blank" class="bg-deep-chestnut hover:bg-[#4a332a] text-warm-beige font-bold py-3 px-8 rounded-full shadow-lg transition-all inline-flex items-center gap-2">
+            <p class="text-gray-600 mb-6" id="cta-text">See something you like? Let's create something special together.
+            </p>
+            <a href="https://www.facebook.com/" target="_blank"
+                class="bg-deep-chestnut hover:bg-[#4a332a] text-warm-beige font-bold py-3 px-8 rounded-full shadow-lg transition-all inline-flex items-center gap-2">
                 <span class="material-symbols-outlined">chat_bubble</span>
                 <span id="cta-btn">Message on Facebook</span>
             </a>
@@ -197,42 +254,90 @@
 
         function setLanguage(lang) {
             const content = translations[lang];
-            
+
             // Text Updates
-            document.getElementById('nav-back').innerText = content.navBack;
-            document.getElementById('nav-title').innerText = content.navTitle;
             document.getElementById('main-title').innerText = content.mainTitle;
             document.getElementById('main-desc-1').innerText = content.mainDesc1;
             document.getElementById('main-desc-2').innerText = content.mainDesc2;
-            
+
             document.getElementById('feat1-title').innerText = content.feat1Title;
             document.getElementById('feat1-desc').innerText = content.feat1Desc;
             document.getElementById('feat2-title').innerText = content.feat2Title;
             document.getElementById('feat2-desc').innerText = content.feat2Desc;
             document.getElementById('feat3-title').innerText = content.feat3Title;
             document.getElementById('feat3-desc').innerText = content.feat3Desc;
-            
+
             document.getElementById('pers-title').innerText = content.persTitle;
             document.getElementById('pers-desc').innerText = content.persDesc;
             document.getElementById('pers-item1').innerText = content.persItem1;
             document.getElementById('pers-item2').innerText = content.persItem2;
             document.getElementById('pers-item3').innerText = content.persItem3;
-            
+
             document.getElementById('recent-title').innerText = content.recentTitle;
             document.getElementById('cta-text').innerText = content.ctaText;
             document.getElementById('cta-btn').innerText = content.ctaBtn;
             document.getElementById('copyright').innerText = content.copyright;
 
-            // Button Styling
-            if (lang === 'en') {
-                document.getElementById('btn-en').className = "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors";
-                document.getElementById('btn-fr').className = "text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors";
-            } else {
-                document.getElementById('btn-en').className = "text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors";
-                document.getElementById('btn-fr').className = "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors";
+            // 1. PC용 버튼 스타일 업데이트
+            const btnEn = document.getElementById('btn-en');
+            const btnFr = document.getElementById('btn-fr');
+
+            if (btnEn && btnFr) {
+                btnEn.className = lang === 'en'
+                    ? "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors"
+                    : "text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors";
+
+                btnFr.className = lang === 'fr'
+                    ? "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors"
+                    : "text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors";
+            }
+
+            // 2. 모바일 상단 버튼 스타일 업데이트
+            const mobHeaderEn = document.getElementById('mob-header-en');
+            const mobHeaderFr = document.getElementById('mob-header-fr');
+
+            if (mobHeaderEn && mobHeaderFr) {
+                mobHeaderEn.className = lang === 'en'
+                    ? "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut"
+                    : "text-sm font-normal text-gray-500";
+
+                mobHeaderFr.className = lang === 'fr'
+                    ? "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut"
+                    : "text-sm font-normal text-gray-500";
             }
         }
+
+        // 모바일 메뉴 토글 함수
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.innerText = 'close';
+            } else {
+                menu.classList.add('hidden');
+                icon.innerText = 'menu';
+            }
+        }
+
+        // 스크롤 시 네비게이션 바 그림자 효과
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            const navContainer = document.getElementById('nav-container');
+
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+                navContainer.classList.remove('h-20');
+                navContainer.classList.add('h-16');
+            } else {
+                nav.classList.remove('shadow-md');
+                navContainer.classList.remove('h-16');
+                navContainer.classList.add('h-20');
+            }
+        });
     </script>
 
 </body>
+
 </html>
