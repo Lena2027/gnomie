@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -7,9 +8,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
@@ -33,48 +37,70 @@
         .fade-in {
             animation: fadeIn 0.8s ease-in-out;
         }
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
         .image-hover:hover {
             transform: scale(1.02);
             transition: transform 0.4s ease;
         }
+
         html {
             scroll-behavior: smooth;
         }
     </style>
 </head>
+
 <body class="bg-warm-beige text-gray-800 font-sans antialiased selection:bg-muted-gold selection:text-white">
 
-    <nav class="fixed w-full z-50 bg-warm-beige/95 backdrop-blur-sm shadow-sm border-b border-stone-200 transition-all duration-300" id="navbar">
+    <nav class="fixed w-full z-50 bg-warm-beige/95 backdrop-blur-sm shadow-sm border-b border-stone-200 transition-all duration-300"
+        id="navbar">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20 transition-all duration-300" id="nav-container">
-                
-                <div class="flex-shrink-0 flex items-center gap-2">
+
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2 hover:opacity-80 transition-opacity">
                     <span class="material-symbols-outlined text-deep-chestnut text-3xl">sentiment_satisfied</span>
-                    <h1 class="font-serif text-xl md:text-2xl font-bold text-deep-chestnut tracking-wide">Happy Hands Craft</h1>
-                </div>
-                
+                    <h1 class="font-serif text-xl md:text-2xl font-bold text-deep-chestnut tracking-wide">Happy Hands
+                        Craft</h1>
+                </a>
+
                 <div class="hidden md:flex items-center space-x-6">
-                    <a href="about.html" class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">About</a>
-                    <a href="gallery.html" class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">Gnome</a>
-                    <a href="gallery1.html" class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">Memory Bear</a>
-                    <a href="order.html" class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">Order</a>
-                    
+                    <a href="about.html"
+                        class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">About</a>
+                    <a href="gallery.html"
+                        class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">Gnome</a>
+                    <a href="gallery1.html"
+                        class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">Memory Bear</a>
+                    <a href="order.html"
+                        class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">Order</a>
+
                     <div class="flex items-center space-x-2 border-l border-gray-300 pl-6">
-                        <button class="text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors" id="btn-en" onclick="setLanguage('en')">EN</button>
+                        <button
+                            class="text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors"
+                            id="btn-en" onclick="setLanguage('en')">EN</button>
                         <span class="text-gray-400">|</span>
-                        <button class="text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors" id="btn-fr" onclick="setLanguage('fr')">FR</button>
+                        <button class="text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors"
+                            id="btn-fr" onclick="setLanguage('fr')">FR</button>
                     </div>
                 </div>
 
                 <div class="md:hidden flex items-center gap-4">
                     <div class="flex items-center space-x-2">
-                        <button class="text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut" id="mob-header-en" onclick="setLanguage('en')">EN</button>
+                        <button class="text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut"
+                            id="mob-header-en" onclick="setLanguage('en')">EN</button>
                         <span class="text-gray-300">|</span>
-                        <button class="text-sm font-normal text-gray-500" id="mob-header-fr" onclick="setLanguage('fr')">FR</button>
+                        <button class="text-sm font-normal text-gray-500" id="mob-header-fr"
+                            onclick="setLanguage('fr')">FR</button>
                     </div>
 
                     <button onclick="toggleMobileMenu()" class="text-deep-chestnut p-1 focus:outline-none">
@@ -85,11 +111,13 @@
             </div>
         </div>
 
-        <div class="hidden md:hidden bg-warm-beige border-b border-stone-200 shadow-lg absolute w-full left-0 top-full" id="mobile-menu">
+        <div class="hidden md:hidden bg-warm-beige border-b border-stone-200 shadow-lg absolute w-full left-0 top-full"
+            id="mobile-menu">
             <div class="px-4 py-4 space-y-4 flex flex-col text-center">
                 <a href="about.html" class="block text-gray-700 hover:text-deep-chestnut font-medium py-2">About</a>
                 <a href="gallery.html" class="block text-gray-700 hover:text-deep-chestnut font-medium py-2">Gnome</a>
-                <a href="gallery1.html" class="block text-gray-700 hover:text-deep-chestnut font-medium py-2">Memory Bear</a>
+                <a href="gallery1.html" class="block text-gray-700 hover:text-deep-chestnut font-medium py-2">Memory
+                    Bear</a>
                 <a href="order.html" class="block text-gray-700 hover:text-deep-chestnut font-medium py-2">Order</a>
             </div>
         </div>
@@ -100,9 +128,12 @@
             <img alt="Cozy workshop" class="w-full h-full object-cover brightness-75" src="heartfelt-workshop.jpg">
             <div class="absolute inset-0 bg-gradient-to-t from-deep-chestnut/60 to-transparent"></div>
             <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-4 fade-in">
-                <h2 class="font-serif text-5xl md:text-7xl text-white font-bold mb-6 shadow-sm" id="hero-title">Love You Can Hold</h2>
-                <p class="text-xl md:text-2xl text-white/90 max-w-2xl font-light mb-10" id="hero-subtitle">Custom memory bears, pillows and whimsical gnomes, handmade in Canada.</p>
-                <a class="bg-muted-gold hover:bg-yellow-600 text-white font-bold py-4 px-10 rounded-full shadow-lg transform transition hover:-translate-y-1 text-lg" href="#collection" id="hero-cta">
+                <h2 class="font-serif text-5xl md:text-7xl text-white font-bold mb-6 shadow-sm" id="hero-title">Love You
+                    Can Hold</h2>
+                <p class="text-xl md:text-2xl text-white/90 max-w-2xl font-light mb-10" id="hero-subtitle">Custom memory
+                    bears, pillows and whimsical gnomes, handmade in Canada.</p>
+                <a class="bg-muted-gold hover:bg-yellow-600 text-white font-bold py-4 px-10 rounded-full shadow-lg transform transition hover:-translate-y-1 text-lg"
+                    href="#collection" id="hero-cta">
                     View Collection
                 </a>
             </div>
@@ -113,7 +144,10 @@
         <span class="material-symbols-outlined text-4xl text-soft-brown mb-4">handshake</span>
         <h3 class="font-serif text-4xl text-deep-chestnut mb-6" id="intro-title">Handmade with Heart</h3>
         <p class="text-lg text-gray-600 leading-relaxed" id="intro-text">
-            Welcome. I create special Bear that tell a story. Whether it's a "Memory Bear" crafted from the clothing of a loved one to hold their memory close, or a charming "Gnome" to bring a touch of magic to your home, every stitch is placed with care. I am a small, independent creator, and I cherish the personal connection with every customer.
+            Welcome. I create special Bear that tell a story. Whether it's a "Memory Bear" crafted from the clothing of
+            a loved one to hold their memory close, or a charming "Gnome" to bring a touch of magic to your home, every
+            stitch is placed with care. I am a small, independent creator, and I cherish the personal connection with
+            every customer.
         </p>
     </section>
 
@@ -121,23 +155,38 @@
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center gap-12 mb-16">
                 <div class="md:w-1/2 space-y-6">
-                    <div class="inline-block bg-warm-beige px-4 py-1 rounded-full text-deep-chestnut font-bold text-sm tracking-widest uppercase mb-2">Signature Item</div>
+                    <div
+                        class="inline-block bg-warm-beige px-4 py-1 rounded-full text-deep-chestnut font-bold text-sm tracking-widest uppercase mb-2">
+                        Signature Item</div>
                     <h3 class="font-serif text-4xl md:text-5xl text-deep-chestnut" id="memorial-title">Memory Bear</h3>
                     <p class="text-lg text-gray-600 leading-relaxed" id="memorial-desc">
-                        Transform a cherished shirt, blanket, or piece of fabric into a comforting keepsake. These bears and pillows are perfect for remembering a parent, grandparent, or anyone dear to your heart. They are soft, huggable, and designed to bring comfort.
+                        Transform a cherished shirt, blanket, or piece of fabric into a comforting keepsake. These bears
+                        and pillows are perfect for remembering a parent, grandparent, or anyone dear to your heart.
+                        They are soft, huggable, and designed to bring comfort.
                     </p>
                     <ul class="space-y-3 text-gray-600" id="memorial-features">
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-muted-gold">check_circle</span> <span>Made from your provided fabric</span></li>
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-muted-gold">check_circle</span> <span>High-quality safety eyes & filling</span></li>
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-muted-gold">check_circle</span> <span>A timeless heirloom for generations</span></li>
+                        <li class="flex items-center gap-3"><span
+                                class="material-symbols-outlined text-muted-gold">check_circle</span> <span>Made from
+                                your provided fabric</span></li>
+                        <li class="flex items-center gap-3"><span
+                                class="material-symbols-outlined text-muted-gold">check_circle</span> <span>High-quality
+                                safety eyes & filling</span></li>
+                        <li class="flex items-center gap-3"><span
+                                class="material-symbols-outlined text-muted-gold">check_circle</span> <span>A timeless
+                                heirloom for generations</span></li>
                     </ul>
-                    <a href="gallery1.html" class="mt-4 inline-flex items-center gap-2 text-deep-chestnut font-bold border-b-2 border-muted-gold hover:text-muted-gold transition-colors text-lg pb-1" id="memorial-btn">
+                    <a href="gallery1.html"
+                        class="mt-4 inline-flex items-center gap-2 text-deep-chestnut font-bold border-b-2 border-muted-gold hover:text-muted-gold transition-colors text-lg pb-1"
+                        id="memorial-btn">
                         View Gallery <span class="material-symbols-outlined">arrow_forward</span>
                     </a>
                 </div>
                 <div class="md:w-1/2 grid grid-cols-2 gap-4">
-                    <img alt="Memorial Bear" class="rounded-lg shadow-md w-full h-64 object-cover image-hover" src="memorial-bear.jpg">
-                    <img alt="Doll Detail" class="rounded-lg shadow-md w-full h-64 object-cover translate-y-8 image-hover" src="doll-detail.jpg">
+                    <img alt="Memorial Bear" class="rounded-lg shadow-md w-full h-64 object-cover image-hover"
+                        src="memorial-bear.jpg">
+                    <img alt="Doll Detail"
+                        class="rounded-lg shadow-md w-full h-64 object-cover translate-y-8 image-hover"
+                        src="doll-detail.jpg">
                 </div>
             </div>
         </div>
@@ -147,23 +196,39 @@
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex flex-col md:flex-row-reverse items-center gap-12">
                 <div class="md:w-1/2 space-y-6">
-                    <div class="inline-block bg-white px-4 py-1 rounded-full text-forest-green font-bold text-sm tracking-widest uppercase mb-2">Home Decor</div>
-                    <h3 class="font-serif text-4xl md:text-5xl text-forest-green" id="gnome-title">Gnomes for Every Season & Spirit</h3>
+                    <div
+                        class="inline-block bg-white px-4 py-1 rounded-full text-forest-green font-bold text-sm tracking-widest uppercase mb-2">
+                        Home Decor</div>
+                    <h3 class="font-serif text-4xl md:text-5xl text-forest-green" id="gnome-title">Gnomes for Every
+                        Season & Spirit</h3>
                     <p class="text-lg text-gray-600 leading-relaxed" id="gnome-desc">
-                        Whether you’re cheering on your favorite team, celebrating the holidays, or looking for a one-of-a-kind gift, my gnomes are ready to join the family. From game-day superfans to festive seasonal friends, each one is handcrafted in Canada with its own unique personality.
+                        Whether you’re cheering on your favorite team, celebrating the holidays, or looking for a
+                        one-of-a-kind gift, my gnomes are ready to join the family. From game-day superfans to festive
+                        seasonal friends, each one is handcrafted in Canada with its own unique personality.
                     </p>
                     <ul class="space-y-3 text-gray-600" id="gnome-features">
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-forest-green">check_circle</span> <span>Sports Team Spirit: Rep your colors with a custom fan gnome</span></li>
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-forest-green">check_circle</span> <span>Seasonal Magic: Classic and holiday designs for every shelf</span></li>
-                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-forest-green">check_circle</span> <span>Custom Creations: Have an idea? Let’s bring your custom gnome to life!</span></li>
+                        <li class="flex items-center gap-3"><span
+                                class="material-symbols-outlined text-forest-green">check_circle</span> <span>Sports
+                                Team Spirit: Rep your colors with a custom fan gnome</span></li>
+                        <li class="flex items-center gap-3"><span
+                                class="material-symbols-outlined text-forest-green">check_circle</span> <span>Seasonal
+                                Magic: Classic and holiday designs for every shelf</span></li>
+                        <li class="flex items-center gap-3"><span
+                                class="material-symbols-outlined text-forest-green">check_circle</span> <span>Custom
+                                Creations: Have an idea? Let’s bring your custom gnome to life!</span></li>
                     </ul>
-                    <a href="gallery.html" class="mt-4 inline-flex items-center gap-2 text-deep-chestnut font-bold border-b-2 border-muted-gold hover:text-muted-gold transition-colors text-lg pb-1" id="gnome-btn">
+                    <a href="gallery.html"
+                        class="mt-4 inline-flex items-center gap-2 text-deep-chestnut font-bold border-b-2 border-muted-gold hover:text-muted-gold transition-colors text-lg pb-1"
+                        id="gnome-btn">
                         View Gallery <span class="material-symbols-outlined">arrow_forward</span>
                     </a>
                 </div>
                 <div class="md:w-1/2 grid grid-cols-2 gap-4">
-                    <img alt="Garden Gnome" class="rounded-lg shadow-md w-full h-64 object-cover image-hover" src="garden-gnome.jpg">
-                    <img alt="Gnome Decor" class="rounded-lg shadow-md w-full h-64 object-cover translate-y-8 image-hover" src="gnome-fireplace.jpg">
+                    <img alt="Garden Gnome" class="rounded-lg shadow-md w-full h-64 object-cover image-hover"
+                        src="garden-gnome.jpg">
+                    <img alt="Gnome Decor"
+                        class="rounded-lg shadow-md w-full h-64 object-cover translate-y-8 image-hover"
+                        src="gnome-fireplace.jpg">
                 </div>
             </div>
         </div>
@@ -171,38 +236,50 @@
 
     <section class="py-20 bg-warm-beige">
         <div class="max-w-5xl mx-auto px-4">
-            <h3 class="font-serif text-3xl md:text-4xl text-center text-deep-chestnut mb-12" id="process-title">How to Purchase</h3>
+            <h3 class="font-serif text-3xl md:text-4xl text-center text-deep-chestnut mb-12" id="process-title">How to
+                Purchase</h3>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="bg-white p-8 rounded-xl shadow-sm text-center relative overflow-hidden">
-                    <div class="text-6xl text-warm-beige absolute -top-4 -right-4 font-serif font-bold opacity-50">1</div>
+                    <div class="text-6xl text-warm-beige absolute -top-4 -right-4 font-serif font-bold opacity-50">1
+                    </div>
                     <span class="material-symbols-outlined text-5xl text-muted-gold mb-4">collections</span>
                     <h4 class="font-bold text-xl mb-3 text-gray-800" id="step1-title">Browse & Decide</h4>
-                    <p class="text-gray-600" id="step1-desc">Look at the photos here or on my Facebook page to decide if you want a custom Memory Bear or a ready-made Gnome.</p>
+                    <p class="text-gray-600" id="step1-desc">Look at the photos here or on my Facebook page to decide if
+                        you want a custom Memory Bear or a ready-made Gnome.</p>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-sm text-center relative overflow-hidden transform md:-translate-y-4 border-b-4 border-muted-gold">
-                    <div class="text-6xl text-warm-beige absolute -top-4 -right-4 font-serif font-bold opacity-50">2</div>
+                <div
+                    class="bg-white p-8 rounded-xl shadow-sm text-center relative overflow-hidden transform md:-translate-y-4 border-b-4 border-muted-gold">
+                    <div class="text-6xl text-warm-beige absolute -top-4 -right-4 font-serif font-bold opacity-50">2
+                    </div>
                     <span class="material-symbols-outlined text-5xl text-muted-gold mb-4">chat</span>
                     <h4 class="font-bold text-xl mb-3 text-gray-800" id="step2-title">Message Me</h4>
-                    <p class="text-gray-600" id="step2-desc">Click the button below to send me a private message on Facebook (Messenger). I speak English and French.</p>
+                    <p class="text-gray-600" id="step2-desc">Click the button below to send me a private message on
+                        Facebook (Messenger). I speak English and French.</p>
                 </div>
                 <div class="bg-white p-8 rounded-xl shadow-sm text-center relative overflow-hidden">
-                    <div class="text-6xl text-warm-beige absolute -top-4 -right-4 font-serif font-bold opacity-50">3</div>
+                    <div class="text-6xl text-warm-beige absolute -top-4 -right-4 font-serif font-bold opacity-50">3
+                    </div>
                     <span class="material-symbols-outlined text-5xl text-muted-gold mb-4">local_shipping</span>
                     <h4 class="font-bold text-xl mb-3 text-gray-800" id="step3-title">Payment & Shipping</h4>
-                    <p class="text-gray-600" id="step3-desc">We will arrange payment securely. I ship anywhere in Canada. Memory Bear require you to ship the fabric to me first.</p>
+                    <p class="text-gray-600" id="step3-desc">We will arrange payment securely. I ship anywhere in
+                        Canada. Memory Bear require you to ship the fabric to me first.</p>
                 </div>
             </div>
 
             <div class="mt-16 text-center">
                 <div class="bg-white p-2 rounded-2xl shadow-lg inline-block">
-                    <img alt="Packaging" class="w-full max-w-2xl h-64 object-cover rounded-xl mb-6" src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=2070&auto=format&fit=crop">
+                    <img alt="Packaging" class="w-full max-w-2xl h-64 object-cover rounded-xl mb-6"
+                        src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=2070&auto=format&fit=crop">
                 </div>
                 <br>
-                <button class="bg-[#0084FF] hover:bg-[#006bcf] text-white font-bold py-4 px-12 rounded-full shadow-lg transition-all text-xl mt-8 flex items-center gap-3 mx-auto" id="final-cta" onclick="openFacebook()">
+                <button
+                    class="bg-[#0084FF] hover:bg-[#006bcf] text-white font-bold py-4 px-12 rounded-full shadow-lg transition-all text-xl mt-8 flex items-center gap-3 mx-auto"
+                    id="final-cta" onclick="openFacebook()">
                     <span class="material-symbols-outlined">chat_bubble</span>
                     Contact Me on Messenger
                 </button>
-                <p class="mt-4 text-sm text-gray-500 italic" id="response-time">I typically reply within a few hours.</p>
+                <p class="mt-4 text-sm text-gray-500 italic" id="response-time">I typically reply within a few hours.
+                </p>
             </div>
         </div>
     </section>
@@ -214,7 +291,8 @@
                 <p class="text-sm opacity-80 mt-1">New Brunswick, Canada</p>
             </div>
             <div class="flex gap-6">
-                <a class="hover:text-white transition-colors" href="https://www.facebook.com/profile.php?id=61568278960743" target="_blank">Facebook</a>
+                <a class="hover:text-white transition-colors"
+                    href="https://www.facebook.com/profile.php?id=61568278960743" target="_blank">Facebook</a>
                 <a class="hover:text-white transition-colors" href="mailto:happyhandsnb@gmail.com">Email</a>
             </div>
             <p class="text-xs opacity-60" id="copyright">© 2022 Happy Hands Craft. All rights reserved.</p>
@@ -302,14 +380,14 @@
             // 1. PC용 버튼 스타일 업데이트
             const btnEn = document.getElementById('btn-en');
             const btnFr = document.getElementById('btn-fr');
-            
+
             if (btnEn && btnFr) {
-                btnEn.className = lang === 'en' 
-                    ? "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors" 
+                btnEn.className = lang === 'en'
+                    ? "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors"
                     : "text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors";
-                
-                btnFr.className = lang === 'fr' 
-                    ? "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors" 
+
+                btnFr.className = lang === 'fr'
+                    ? "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors"
                     : "text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors";
             }
 
@@ -321,7 +399,7 @@
                 mobHeaderEn.className = lang === 'en'
                     ? "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut"
                     : "text-sm font-normal text-gray-500";
-                
+
                 mobHeaderFr.className = lang === 'fr'
                     ? "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut"
                     : "text-sm font-normal text-gray-500";
@@ -331,16 +409,16 @@
             document.getElementById('hero-title').innerText = content.heroTitle;
             document.getElementById('hero-subtitle').innerText = content.heroSubtitle;
             document.getElementById('hero-cta').innerText = content.heroCta;
-            
+
             document.getElementById('intro-title').innerText = content.introTitle;
             document.getElementById('intro-text').innerText = content.introText;
-            
+
             document.getElementById('memorial-title').innerText = content.memorialTitle;
             document.getElementById('memorial-desc').innerText = content.memorialDesc;
-            
+
             // Memorial Features 리스트 업데이트
             const memList = document.getElementById('memorial-features');
-            if(memList) {
+            if (memList) {
                 memList.innerHTML = '';
                 content.memorialFeatures.forEach(feat => {
                     const li = document.createElement('li');
@@ -350,14 +428,14 @@
                 });
             }
             const memBtn = document.getElementById('memorial-btn');
-            if(memBtn) memBtn.innerHTML = `${content.memorialBtn} <span class="material-symbols-outlined">arrow_forward</span>`;
+            if (memBtn) memBtn.innerHTML = `${content.memorialBtn} <span class="material-symbols-outlined">arrow_forward</span>`;
 
             // Gnome Features 리스트 업데이트
             document.getElementById('gnome-title').innerText = content.gnomeTitle;
             document.getElementById('gnome-desc').innerText = content.gnomeDesc;
-            
+
             const gnomeList = document.getElementById('gnome-features');
-            if(gnomeList) {
+            if (gnomeList) {
                 gnomeList.innerHTML = '';
                 content.gnomeFeatures.forEach(feat => {
                     const li = document.createElement('li');
@@ -367,7 +445,7 @@
                 });
             }
             const gnomeBtn = document.getElementById('gnome-btn');
-            if(gnomeBtn) gnomeBtn.innerHTML = `${content.gnomeBtn} <span class="material-symbols-outlined">arrow_forward</span>`;
+            if (gnomeBtn) gnomeBtn.innerHTML = `${content.gnomeBtn} <span class="material-symbols-outlined">arrow_forward</span>`;
 
             // Process & Footer 업데이트
             document.getElementById('process-title').innerText = content.processTitle;
@@ -377,7 +455,7 @@
             document.getElementById('step2-desc').innerText = content.step2Desc;
             document.getElementById('step3-title').innerText = content.step3Title;
             document.getElementById('step3-desc').innerText = content.step3Desc;
-            
+
             document.getElementById('final-cta').innerHTML = `<span class="material-symbols-outlined">chat_bubble</span> ${content.finalCta}`;
             document.getElementById('response-time').innerText = content.responseTime;
             document.getElementById('copyright').innerText = content.copyright;
@@ -387,7 +465,7 @@
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             const icon = document.getElementById('menu-icon');
-            
+
             if (menu.classList.contains('hidden')) {
                 menu.classList.remove('hidden');
                 icon.innerText = 'close';
@@ -405,7 +483,7 @@
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
             const navContainer = document.getElementById('nav-container');
-            
+
             if (window.scrollY > 50) {
                 nav.classList.add('shadow-md');
                 navContainer.classList.remove('h-20');
@@ -418,4 +496,5 @@
         });
     </script>
 </body>
+
 </html>
