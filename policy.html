@@ -8,8 +8,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -33,30 +36,42 @@
 <body class="bg-warm-beige text-gray-800 font-sans antialiased">
 
     <!-- ====== 네비게이션 ====== -->
-    <nav class="fixed w-full z-50 bg-warm-beige/95 backdrop-blur-sm shadow-sm border-b border-stone-200 transition-all duration-300" id="navbar">
+    <nav class="fixed w-full z-50 bg-warm-beige/95 backdrop-blur-sm shadow-sm border-b border-stone-200 transition-all duration-300"
+        id="navbar">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20 transition-all duration-300" id="nav-container">
                 <a href="index.html" class="flex-shrink-0 flex items-center gap-2 hover:opacity-80 transition-opacity">
                     <span class="material-symbols-outlined text-deep-chestnut text-3xl">sentiment_satisfied</span>
-                    <h1 class="font-serif text-xl md:text-2xl font-bold text-deep-chestnut tracking-wide">Happy Hands Craft</h1>
+                    <h1 class="font-serif text-xl md:text-2xl font-bold text-deep-chestnut tracking-wide">Happy Hands
+                        Craft</h1>
                 </a>
                 <div class="hidden md:flex items-center space-x-6">
-                    <a href="about.html" class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">About</a>
-                    <a href="gallery.html" class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">Gnome</a>
-                    <a href="gallery1.html" class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">Memory Bear</a>
-                    <a href="order.html" class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">Order</a>
-                    <a href="event.html" class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">Events</a>
+                    <a href="about.html"
+                        class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">About</a>
+                    <a href="gallery.html"
+                        class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">Gnome</a>
+                    <a href="gallery1.html"
+                        class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">Memory Bear</a>
+                    <a href="order.html"
+                        class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">Order</a>
+                    <a href="event.html"
+                        class="text-gray-600 hover:text-deep-chestnut font-medium transition-colors">Events</a>
                     <div class="flex items-center space-x-2 border-l border-gray-300 pl-6">
-                        <button class="text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors" id="btn-en" onclick="setLanguage('en')">EN</button>
+                        <button
+                            class="text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors"
+                            id="btn-en" onclick="setLanguage('en')">EN</button>
                         <span class="text-gray-400">|</span>
-                        <button class="text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors" id="btn-fr" onclick="setLanguage('fr')">FR</button>
+                        <button class="text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors"
+                            id="btn-fr" onclick="setLanguage('fr')">FR</button>
                     </div>
                 </div>
                 <div class="md:hidden flex items-center gap-4">
                     <div class="flex items-center space-x-2">
-                        <button class="text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut" id="mob-header-en" onclick="setLanguage('en')">EN</button>
+                        <button class="text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut"
+                            id="mob-header-en" onclick="setLanguage('en')">EN</button>
                         <span class="text-gray-300">|</span>
-                        <button class="text-sm font-normal text-gray-500" id="mob-header-fr" onclick="setLanguage('fr')">FR</button>
+                        <button class="text-sm font-normal text-gray-500" id="mob-header-fr"
+                            onclick="setLanguage('fr')">FR</button>
                     </div>
                     <button onclick="toggleMobileMenu()" class="text-deep-chestnut p-1 focus:outline-none">
                         <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
@@ -64,11 +79,13 @@
                 </div>
             </div>
         </div>
-        <div class="hidden md:hidden bg-warm-beige border-b border-stone-200 shadow-lg absolute w-full left-0 top-full" id="mobile-menu">
+        <div class="hidden md:hidden bg-warm-beige border-b border-stone-200 shadow-lg absolute w-full left-0 top-full"
+            id="mobile-menu">
             <div class="px-4 py-4 space-y-4 flex flex-col text-center">
                 <a href="about.html" class="block text-gray-700 hover:text-deep-chestnut font-medium py-2">About</a>
                 <a href="gallery.html" class="block text-gray-700 hover:text-deep-chestnut font-medium py-2">Gnome</a>
-                <a href="gallery1.html" class="block text-gray-700 hover:text-deep-chestnut font-medium py-2">Memory Bear</a>
+                <a href="gallery1.html" class="block text-gray-700 hover:text-deep-chestnut font-medium py-2">Memory
+                    Bear</a>
                 <a href="order.html" class="block text-gray-700 hover:text-deep-chestnut font-medium py-2">Order</a>
                 <a href="event.html" class="block text-gray-700 hover:text-deep-chestnut font-medium py-2">Events</a>
             </div>
@@ -98,9 +115,11 @@
                     <span class="material-symbols-outlined text-muted-gold text-xl">person</span>
                 </div>
                 <div>
-                    <h3 class="font-serif text-2xl text-deep-chestnut mb-3" id="s1-title">Information Collection and Use</h3>
+                    <h3 class="font-serif text-2xl text-deep-chestnut mb-3" id="s1-title">Information Collection and Use
+                    </h3>
                     <p class="text-gray-600 leading-relaxed" id="s1-desc">
-                        Happy Hands Craft does not collect personal information from visitors. We do not gather, store, or share any personal data.
+                        Happy Hands Craft does not collect personal information from visitors. We do not gather, store,
+                        or share any personal data.
                     </p>
                 </div>
             </div>
@@ -115,7 +134,8 @@
                 <div>
                     <h3 class="font-serif text-2xl text-deep-chestnut mb-3" id="s2-title">Cookies</h3>
                     <p class="text-gray-600 leading-relaxed" id="s2-desc">
-                        Happy Hands Craft may use cookies to improve the user experience or for basic website functionality. These cookies do not collect personal information.
+                        Happy Hands Craft may use cookies to improve the user experience or for basic website
+                        functionality. These cookies do not collect personal information.
                     </p>
                 </div>
             </div>
@@ -130,7 +150,8 @@
                 <div>
                     <h3 class="font-serif text-2xl text-deep-chestnut mb-3" id="s3-title">Third-Party Links</h3>
                     <p class="text-gray-600 leading-relaxed" id="s3-desc">
-                        Our website may contain links to third-party websites. We are not responsible for the privacy practices of these third parties.
+                        Our website may contain links to third-party websites. We are not responsible for the privacy
+                        practices of these third parties.
                     </p>
                 </div>
             </div>
@@ -184,73 +205,74 @@
         <div class="text-center">
             <h4 class="font-serif text-xl font-bold mb-2">Happy Hands Craft</h4>
             <p class="text-sm opacity-80 mb-4">New Brunswick, Canada</p>
-           <p class="text-sm opacity-60" id="copyright">© 2022 Happy Hands Craft. All rights reserved. | <a href="policy.html" class="hover:underline opacity-80">Privacy Policy</a></p>
+            <p class="text-sm opacity-60 text-center" id="copyright">© 2022 Happy Hands Craft. All rights reserved. | <a
+                    href="policy.html" class="hover:underline opacity-80">Privacy Policy</a></p>
         </div>
     </footer>
 
     <script>
         const translations = {
             en: {
-                pageTitle:     "Privacy Policy",
+                pageTitle: "Privacy Policy",
                 effectiveDate: "Effective Date: March 1st, 2026",
-                intro:         "This Privacy Policy describes how Happy Hands Craft operates with respect to user information.",
-                s1Title:       "Information Collection and Use",
-                s1Desc:        "Happy Hands Craft does not collect personal information from visitors. We do not gather, store, or share any personal data.",
-                s2Title:       "Cookies",
-                s2Desc:        "Happy Hands Craft may use cookies to improve the user experience or for basic website functionality. These cookies do not collect personal information.",
-                s3Title:       "Third-Party Links",
-                s3Desc:        "Our website may contain links to third-party websites. We are not responsible for the privacy practices of these third parties.",
-                s4Title:       "Consent",
-                s4Desc:        "By using our website, you consent to this Privacy Policy.",
-                s5Title:       "Changes to this Policy",
-                s5Desc:        "We reserve the right to modify this policy at any time. We will post any changes on this page.",
-                contactNote:   "Questions about this policy? Feel free to reach out.",
-                contactBtn:    "Contact Us",
-                copyright:     "© 2022 Happy Hands Craft. All rights reserved."
+                intro: "This Privacy Policy describes how Happy Hands Craft operates with respect to user information.",
+                s1Title: "Information Collection and Use",
+                s1Desc: "Happy Hands Craft does not collect personal information from visitors. We do not gather, store, or share any personal data.",
+                s2Title: "Cookies",
+                s2Desc: "Happy Hands Craft may use cookies to improve the user experience or for basic website functionality. These cookies do not collect personal information.",
+                s3Title: "Third-Party Links",
+                s3Desc: "Our website may contain links to third-party websites. We are not responsible for the privacy practices of these third parties.",
+                s4Title: "Consent",
+                s4Desc: "By using our website, you consent to this Privacy Policy.",
+                s5Title: "Changes to this Policy",
+                s5Desc: "We reserve the right to modify this policy at any time. We will post any changes on this page.",
+                contactNote: "Questions about this policy? Feel free to reach out.",
+                contactBtn: "Contact Us",
+                copyright: "© 2022 Happy Hands Craft. All rights reserved."
             },
             fr: {
-                pageTitle:     "Politique de confidentialité",
+                pageTitle: "Politique de confidentialité",
                 effectiveDate: "Date d’entrée en vigueur : le 1er mars 2026",
-                intro:         "Cette politique de confidentialité explique comment Happy Hands Craft gère l’information de ses utilisateurs.",
-                s1Title:       "Collecte et utilisation de l’information",
-                s1Desc:        "Happy Hands Craft ne ramasse pas d’informations personnelles de ses visiteurs. On ne garde pas, on n’enregistre pas, pis on ne partage aucune de vos données personnelles.",
-                s2Title:       "Témoins (Cookies)",
-                s2Desc:        "Happy Hands Craft peut utiliser des témoins (cookies) pour améliorer l’expérience de l’utilisateur ou pour le bon fonctionnement du site. Ces témoins-là ne ramassent aucune information personnelle.",
-                s3Title:       "Liens vers d’autres sites",
-                s3Desc:        "Notre site peut contenir des liens vers des sites gérés par d’autres personnes ou compagnies. Nous ne sommes pas responsables de comment elles les informations.",
-                s4Title:       "Consentement",
-                s4Desc:        "En utilisant notre site, vous acceptez cette politique de confidentialité.",
-                s5Title:       "Changements à cette politique",
-                s5Desc:        "Nous réservons le droit de changer cette politique à notre discrétion. En lieu de changements, nous les afficherons sur notre site.",
-                contactNote:   "Des questions sur cette politique? N'hésitez pas à nous contacter.",
-                contactBtn:    "Nous contacter",
-                copyright:     "© 2022 Happy Hands Craft. Tous droits réservés."
+                intro: "Cette politique de confidentialité explique comment Happy Hands Craft gère l’information de ses utilisateurs.",
+                s1Title: "Collecte et utilisation de l’information",
+                s1Desc: "Happy Hands Craft ne ramasse pas d’informations personnelles de ses visiteurs. On ne garde pas, on n’enregistre pas, pis on ne partage aucune de vos données personnelles.",
+                s2Title: "Témoins (Cookies)",
+                s2Desc: "Happy Hands Craft peut utiliser des témoins (cookies) pour améliorer l’expérience de l’utilisateur ou pour le bon fonctionnement du site. Ces témoins-là ne ramassent aucune information personnelle.",
+                s3Title: "Liens vers d’autres sites",
+                s3Desc: "Notre site peut contenir des liens vers des sites gérés par d’autres personnes ou compagnies. Nous ne sommes pas responsables de comment elles les informations.",
+                s4Title: "Consentement",
+                s4Desc: "En utilisant notre site, vous acceptez cette politique de confidentialité.",
+                s5Title: "Changements à cette politique",
+                s5Desc: "Nous réservons le droit de changer cette politique à notre discrétion. En lieu de changements, nous les afficherons sur notre site.",
+                contactNote: "Des questions sur cette politique? N'hésitez pas à nous contacter.",
+                contactBtn: "Nous contacter",
+                copyright: "© 2022 Happy Hands Craft. Tous droits réservés."
             }
         };
 
         function setLanguage(lang) {
             const t = translations[lang];
-            document.getElementById('page-title').innerText     = t.pageTitle;
+            document.getElementById('page-title').innerText = t.pageTitle;
             document.getElementById('effective-date').innerText = t.effectiveDate;
-            document.getElementById('intro').innerText          = t.intro;
-            document.getElementById('s1-title').innerText       = t.s1Title;
-            document.getElementById('s1-desc').innerText        = t.s1Desc;
-            document.getElementById('s2-title').innerText       = t.s2Title;
-            document.getElementById('s2-desc').innerText        = t.s2Desc;
-            document.getElementById('s3-title').innerText       = t.s3Title;
-            document.getElementById('s3-desc').innerText        = t.s3Desc;
-            document.getElementById('s4-title').innerText       = t.s4Title;
-            document.getElementById('s4-desc').innerText        = t.s4Desc;
-            document.getElementById('s5-title').innerText       = t.s5Title;
-            document.getElementById('s5-desc').innerText        = t.s5Desc;
-            document.getElementById('contact-note').innerText   = t.contactNote;
-            document.getElementById('contact-btn').innerText    = t.contactBtn;
-            document.getElementById('copyright').innerText      = t.copyright;
+            document.getElementById('intro').innerText = t.intro;
+            document.getElementById('s1-title').innerText = t.s1Title;
+            document.getElementById('s1-desc').innerText = t.s1Desc;
+            document.getElementById('s2-title').innerText = t.s2Title;
+            document.getElementById('s2-desc').innerText = t.s2Desc;
+            document.getElementById('s3-title').innerText = t.s3Title;
+            document.getElementById('s3-desc').innerText = t.s3Desc;
+            document.getElementById('s4-title').innerText = t.s4Title;
+            document.getElementById('s4-desc').innerText = t.s4Desc;
+            document.getElementById('s5-title').innerText = t.s5Title;
+            document.getElementById('s5-desc').innerText = t.s5Desc;
+            document.getElementById('contact-note').innerText = t.contactNote;
+            document.getElementById('contact-btn').innerText = t.contactBtn;
+            document.getElementById('copyright').innerText = t.copyright;
 
-            const active   = "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors";
+            const active = "text-sm font-bold text-deep-chestnut border-b-2 border-deep-chestnut transition-colors";
             const inactive = "text-sm font-normal text-gray-500 hover:text-deep-chestnut transition-colors";
-            ['btn-en','mob-header-en'].forEach(id => { const el=document.getElementById(id); if(el) el.className=lang==='en'?active:inactive; });
-            ['btn-fr','mob-header-fr'].forEach(id => { const el=document.getElementById(id); if(el) el.className=lang==='fr'?active:inactive; });
+            ['btn-en', 'mob-header-en'].forEach(id => { const el = document.getElementById(id); if (el) el.className = lang === 'en' ? active : inactive; });
+            ['btn-fr', 'mob-header-fr'].forEach(id => { const el = document.getElementById(id); if (el) el.className = lang === 'fr' ? active : inactive; });
         }
 
         function toggleMobileMenu() {
@@ -263,10 +285,11 @@
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
             const cnt = document.getElementById('nav-container');
-            if (window.scrollY > 50) { nav.classList.add('shadow-md'); cnt.classList.replace('h-20','h-16'); }
-            else { nav.classList.remove('shadow-md'); cnt.classList.replace('h-16','h-20'); }
+            if (window.scrollY > 50) { nav.classList.add('shadow-md'); cnt.classList.replace('h-20', 'h-16'); }
+            else { nav.classList.remove('shadow-md'); cnt.classList.replace('h-16', 'h-20'); }
         });
     </script>
 
 </body>
+
 </html>
