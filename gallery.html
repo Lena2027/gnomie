@@ -165,32 +165,57 @@
         <h3 class="font-serif text-3xl text-deep-chestnut mb-8 text-center border-b border-muted-gold pb-4 inline-block w-full"
             id="recent-title">Recent Creations</h3>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap justify-center gap-3 mb-10">
+            <button
+                class="filter-btn px-3 py-1 rounded-full border-2 border-forest-green bg-forest-green text-warm-beige font-semibold transition-all duration-300"
+                data-filter="all" id="filter-all">All</button>
+            <button
+                class="filter-btn px-3 py-1 rounded-full border-2 border-forest-green text-forest-green hover:bg-forest-green/10 font-semibold transition-all duration-300"
+                data-filter="sports" id="filter-sports">Sports</button>
+            <button
+                class="filter-btn px-3 py-1 rounded-full border-2 border-forest-green text-forest-green hover:bg-forest-green/10 font-semibold transition-all duration-300"
+                data-filter="season" id="filter-season">Season</button>
+            <button
+                class="filter-btn px-3 py-1 rounded-full border-2 border-forest-green text-forest-green hover:bg-forest-green/10 font-semibold transition-all duration-300"
+                data-filter="custom" id="filter-custom">Custom</button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+            <div class="gnomie-item bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-all duration-500 transform scale-100 opacity-100"
+                data-category="season">
                 <img src="01.png" alt="Gnome 1" class="w-full aspect-[3/4] object-cover rounded">
             </div>
-            <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+            <div class="gnomie-item bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-all duration-500 transform scale-100 opacity-100"
+                data-category="custom">
                 <img src="02.png" alt="Gnome 2" class="w-full aspect-[3/4] object-cover rounded">
             </div>
-            <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+            <div class="gnomie-item bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-all duration-500 transform scale-100 opacity-100"
+                data-category="custom">
                 <img src="04.png" alt="Gnome 3" class="w-full aspect-[3/4] object-cover rounded">
             </div>
-            <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+            <div class="gnomie-item bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-all duration-500 transform scale-100 opacity-100"
+                data-category="season">
                 <img src="05.png" alt="Gnome 4" class="w-full aspect-[3/4] object-cover rounded">
             </div>
-            <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+            <div class="gnomie-item bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-all duration-500 transform scale-100 opacity-100"
+                data-category="custom">
                 <img src="06.png" alt="Gnome 5" class="w-full aspect-[3/4] object-cover rounded">
             </div>
-            <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+            <div class="gnomie-item bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-all duration-500 transform scale-100 opacity-100"
+                data-category="season">
                 <img src="07.png" alt="Gnome 6" class="w-full aspect-[3/4] object-cover rounded">
             </div>
-            <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+            <div class="gnomie-item bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-all duration-500 transform scale-100 opacity-100"
+                data-category="sports">
                 <img src="08.png" alt="Gnome 7" class="w-full aspect-[3/4] object-cover rounded">
             </div>
-            <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+            <div class="gnomie-item bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-all duration-500 transform scale-100 opacity-100"
+                data-category="sports">
                 <img src="09.png" alt="Gnome 8" class="w-full aspect-[3/4] object-cover rounded">
             </div>
-            <div class="bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+            <div class="gnomie-item bg-white p-2 rounded-lg shadow-md hover:shadow-xl transition-all duration-500 transform scale-100 opacity-100"
+                data-category="sports">
                 <img src="010.png" alt="Gnome 9" class="w-full aspect-[3/4] object-cover rounded">
             </div>
         </div>
@@ -207,9 +232,12 @@
     </section>
 
     <footer class="bg-deep-chestnut text-warm-beige py-8 border-t-4 border-muted-gold mt-12">
-        <div class="text-center">
-            <p class="text-sm opacity-60 text-center" id="copyright">© 2022 Happy Hands Craft. All rights reserved. | <a
-                    href="policy.html" class="hover:underline opacity-80">Privacy Policy</a></p>
+        <div
+            class="px-4 mx-auto flex flex-col items-center justify-center space-y-2 md:flex-row md:space-y-0 md:space-x-2">
+            <span class="text-sm opacity-60 text-center" id="copyright">© 2022 Happy Hands Craft. All rights
+                reserved.</span>
+            <span class="hidden md:inline text-sm opacity-60">|</span>
+            <a href="policy.html" class="text-sm opacity-80 hover:underline text-center">Privacy Policy</a>
         </div>
     </footer>
 
@@ -233,6 +261,10 @@
                 customTitle: "Looking for a specific theme?",
                 customDesc: "I can design a custom gnome to match any profession or passion.",
                 recentTitle: "Recent Creations",
+                filterAll: "All",
+                filterSports: "Sports Gnomie",
+                filterSeason: "Season Gnomie",
+                filterCustom: "Custom Gnomie",
                 ctaText: "See something you like? Let's create something special together.",
                 ctaBtn: "Message on Facebook",
                 copyright: "© 2022 Happy Hands Craft. All rights reserved."
@@ -255,6 +287,10 @@
                 customTitle: "Vous cherchez un thème spécifique ?",
                 customDesc: "Je peux concevoir un gnome sur mesure pour correspondre à n’importe quelle profession ou passion.",
                 recentTitle: "Créations Récentes",
+                filterAll: "Tous",
+                filterSports: "Gnome de Sport",
+                filterSeason: "Gnome Saisonnier",
+                filterCustom: "Gnome Personnalisé",
                 ctaText: "Vous voyez quelque chose qui vous plaît ? Créons quelque chose de spécial ensemble.",
                 ctaBtn: "Message sur Facebook",
                 copyright: "© 2022 Happy Hands Craft. Tous droits réservés."
@@ -283,6 +319,10 @@
             document.getElementById('custom-desc').innerText = content.customDesc;
 
             document.getElementById('recent-title').innerText = content.recentTitle;
+            document.getElementById('filter-all').innerText = content.filterAll;
+            document.getElementById('filter-sports').innerText = content.filterSports;
+            document.getElementById('filter-season').innerText = content.filterSeason;
+            document.getElementById('filter-custom').innerText = content.filterCustom;
             document.getElementById('cta-text').innerText = content.ctaText;
             document.getElementById('cta-btn').innerText = content.ctaBtn;
             document.getElementById('copyright').innerText = content.copyright;
@@ -344,6 +384,46 @@
                 navContainer.classList.remove('h-16');
                 navContainer.classList.add('h-20');
             }
+        });
+
+        // Filter functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const gnomieItems = document.querySelectorAll('.gnomie-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update button styles
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-forest-green', 'text-warm-beige');
+                        b.classList.add('text-forest-green', 'hover:bg-forest-green/10');
+                    });
+
+                    btn.classList.add('bg-forest-green', 'text-warm-beige');
+                    btn.classList.remove('text-forest-green', 'hover:bg-forest-green/10');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    gnomieItems.forEach(item => {
+                        // Apply animation classes
+                        item.classList.remove('scale-100', 'opacity-100');
+                        item.classList.add('scale-95', 'opacity-0');
+
+                        setTimeout(() => {
+                            if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                                item.style.display = 'block';
+                                // Slight delay to allow display flex to apply before transitioning opacity/scale
+                                setTimeout(() => {
+                                    item.classList.remove('scale-95', 'opacity-0');
+                                    item.classList.add('scale-100', 'opacity-100');
+                                }, 50);
+                            } else {
+                                item.style.display = 'none';
+                            }
+                        }, 300); // Wait for fade out
+                    });
+                });
+            });
         });
     </script>
 
