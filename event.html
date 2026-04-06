@@ -222,9 +222,9 @@
         function renderEvents(lang) {
             const monthOrder = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
             const sorted = [...loadedEvents].sort((a, b) => {
-                const y = parseInt(a.year) - parseInt(b.year);
+                const y = parseInt(b.year) - parseInt(a.year);
                 if (y !== 0) return y;
-                return monthOrder.indexOf(a.month_en) - monthOrder.indexOf(b.month_en) || parseInt(a.date) - parseInt(b.date);
+                return monthOrder.indexOf(b.month_en) - monthOrder.indexOf(a.month_en) || parseInt(b.date) - parseInt(a.date);
             });
             document.getElementById('event-cards').innerHTML = sorted.map(e => createEventCard(e, lang)).join('');
         }
