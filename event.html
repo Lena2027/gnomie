@@ -186,13 +186,10 @@
 
         function createEventCard(e, lang) {
             const tag = TAG_CONFIG[e.tag] || TAG_CONFIG.craft;
-            const imageHtml = e.image
-                ? `<div style="height:180px;background:url('${e.image}') center top/cover no-repeat;flex-shrink:0;"></div>`
-                : '';
             return `
-                <div style="display:flex;flex-direction:column;background:#fff;border-radius:16px;border:1px solid #e7e5e4;box-shadow:0 1px 3px rgba(0,0,0,0.08);overflow:hidden;">
-                    ${imageHtml}
-                    <div class="bg-deep-chestnut p-5 flex items-center gap-4" style="flex-shrink:0;">
+                <div class="bg-white rounded-2xl shadow-sm border border-stone-100 overflow-hidden hover:shadow-md transition-shadow">
+                    ${e.image ? `<img src="${e.image}" alt="${e['title_' + lang]}" style="width:100%;display:block;" onerror="this.style.display='none'">` : ''}
+                    <div class="bg-deep-chestnut p-5 flex items-center gap-4">
                         <div class="bg-muted-gold rounded-xl p-3 text-center min-w-[60px]">
                             <p class="text-white font-bold text-2xl leading-none">${e.date}</p>
                             <p class="text-white text-xs uppercase tracking-wide mt-1">${e['month_' + lang]}</p>
